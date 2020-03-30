@@ -1548,14 +1548,14 @@
 	<script src="{% static 'lib/bootstrap/bootstrap.min.js' %}"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/owl.carousel.min.js"></script>
 	<script src="{% static 'dist/main.js' %}"></script>
-	{% comment %} <script type="text/javascript" src="http://demo.api.gladepay.com/checkout.js"></script> {% endcomment %}
-	<script type="text/javascript" src="https://api.gladepay.com/checkout.js"></script>
+	<script type="text/javascript" src="http://demo.api.gladepay.com/checkout.js"></script>
+	{% comment %} <script type="text/javascript" src="https://api.gladepay.com/checkout.js"></script> {% endcomment %}
 
 	<script>
     $('#donate_now').click(function() {
-        
+        var Url = "{% url 'payment' %}"
         initPayment({
-            MID:"GP_05fIqP512Q3uqWiKTzJzQpj0sKHop3TK",
+            MID:"GP0000001",
             email: "hello@example.com",
             firstname:"John",
             lastname:"Doe",
@@ -1569,10 +1569,20 @@
             onclose: function() {},
             callback: function(response) {
                 console.log(response)
-
-					}
+				$.ajax({
+				url: Url,
+				method: "POST",
+				data: {
+					"response": response,
+					'csrfmiddlewaretoken': '{{ csrf_token }}'
+				},
+				success: function(data){					
+					console.log(data)
+				}
 				})
-			})	
+			}
+		})
+	})	
 	</script>
 
 	<script>

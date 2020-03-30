@@ -19,15 +19,14 @@ class PaymentModel(models.Model):
     '''
     holds information on all successful payments made on the platform
     '''
-    fullname            = models.CharField( max_length=250)
-    email               = models.CharField(max_length=100)
-    txnstatus           = models.CharField(max_length=50)
-    txnref              = models.CharField(max_length=250)
-    bankmessage         = models.CharField( max_length=250)
-    paymentmethod       = models.CharField( max_length=50)
-    amount              = models.IntegerField()
-    message             = models.CharField( max_length=250)
-    fraudstatus         = models.CharField( max_length=50)
-    cardtoken           = models.CharField( max_length=250)
+    fullname            = models.CharField( max_length=250, null=True, blank=True)
+    email               = models.CharField(max_length=100, null=True, blank=True)
+    txnstatus           = models.CharField(max_length=50, null=True, blank=True)
+    txnref              = models.CharField(max_length=250, null=True, blank=True)
+    bankmessage         = models.CharField( max_length=250, null=True, blank=True)
+    paymentmethod       = models.CharField( max_length=50, null=True, blank=True)
+    amount              = models.CharField( max_length=250, null=True, blank=True)
+    message             = models.CharField( max_length=250, null=True, blank=True)
+    fraudstatus         = models.CharField( max_length=50, null=True, blank=True)
 
 

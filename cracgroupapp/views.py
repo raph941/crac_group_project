@@ -5,7 +5,7 @@ from django.contrib import messages
 from django.template.loader import get_template
 from django.core.mail import EmailMessage
 from django.http import JsonResponse
-from .models import VolounteerModel
+from .models import VolounteerModel, PaymentModel
 
 from .forms import ContactForm
 
@@ -64,11 +64,26 @@ def VolounteerView(request):
         data = {
             "message": 'thank you for volounteering, you would recieve a message from us',
         }
-        
+
     return JsonResponse(data)
 
 
-    # def VolounteerView(request):
-    #     if request.method == 'POST':
-    #         print(request.POST)
-    # return JsonResponse(data)
+def PaymentView(request):
+    if request.method == 'POST':
+        fullname            = request.POST['response[fullname]']
+        email               = request.POST['response[email]']
+        txnstatus           = request.POST['response[txnStatus]']
+        txnref              = request.POST['response[txnRef]']
+        bankmessage         = request.POST['response[bank_message]']
+        paymentmethod       = request.POST['response[payment_method]']
+        amount              = request.POST['response[chargedAmount]']
+        message             = request.POST['response[message]']
+        fraudstatus         = request.POST['response[fraudStatus]']
+
+        PaymentModel.objects.create(fullname=fullname, email=email, txnstatus=txnstatus, txnref=txnref, bankmessage=bankmessage, paymentmethod=paymentmethod, amount=amount, message=message, fraudstatus=fraudstatus)
+
+        data = {
+            "message": 'thank you for volounteering, you would recieve a message from us',
+        }
+
+    return JsonResponse(data)
