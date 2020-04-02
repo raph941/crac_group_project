@@ -5,7 +5,7 @@ from django.contrib import messages
 from django.template.loader import get_template
 from django.core.mail import EmailMessage
 from django.http import JsonResponse
-from .models import VolounteerModel, PaymentModel
+from .models import VolounteerModel, PaymentModel, ProductDonationModel
 
 from .forms import ContactForm
 
@@ -53,13 +53,14 @@ def VolounteerView(request):
         volounteer_phone_number         = request.POST['volounteerPhoneNumber']
         volounteer_gender               = request.POST['volounteerGender']
         volounteer_address              = request.POST['volounteerAddress']
+        volounteer_location             = request.POST['volounteerLocation']
         volounteer_organization_name    = request.POST['volounteerOrganizationName']
         # vehicle_ownership               = request.POST['vehicleOwnership']
         
         if volounteer == 'logistic':
-            VolounteerModel.objects.create(name=volounteer_name, email=volounteer_email, phone_number=volounteer_phone_number, gender=volounteer_gender, address=volounteer_address, organization_name=volounteer_organization_name, is_logistic_company=True)
+            VolounteerModel.objects.create(name=volounteer_name, email=volounteer_email, phone_number=volounteer_phone_number, gender=volounteer_gender, location=volounteer_location, address=volounteer_address, organization_name=volounteer_organization_name, is_logistic_company=True)
         else:
-            VolounteerModel.objects.create(name=volounteer_name, email=volounteer_email, phone_number=volounteer_phone_number, gender=volounteer_gender, address=volounteer_address, organization_name=volounteer_organization_name, is_charity_org=True)
+            VolounteerModel.objects.create(name=volounteer_name, email=volounteer_email, phone_number=volounteer_phone_number, gender=volounteer_gender, location=volounteer_location, address=volounteer_address, organization_name=volounteer_organization_name, is_charity_org=True)
 
         data = {
             "message": 'thank you for volounteering, you would recieve a message from us',
@@ -87,3 +88,106 @@ def PaymentView(request):
         }
 
     return JsonResponse(data)
+
+
+def ProductDonationView(request):
+    if request.method == 'POST':
+        fullname                    = request.POST['fullname']
+        email                       = request.POST['email']
+        phone_number                = request.POST['phone_number']
+        product_description         = request.POST['product_description']
+        product_distribution        = request.POST['product_distribution']
+        product                     = request.POST['product']
+        pickup_location             = request.POST['pickup_location']
+        delivery_date               = request.POST['delivery_date']
+
+        ProductDonationModel.objects.create(fullname=fullname, email=email, phone_number=phone_number, product=product, pickup_location=pickup_location, product_distribution=product_distribution, delivery_date=delivery_date, product_description=product_description)
+
+    return render(request, 'product-donation.html')
+
+def DimOneTimeDonationView(request):
+    if request.method == 'POST':
+        fullname            = request.POST['response[fullname]']
+        email               = request.POST['response[email]']
+        txnstatus           = request.POST['response[txnStatus]']
+        txnref              = request.POST['response[txnRef]']
+        bankmessage         = request.POST['response[bank_message]']
+        paymentmethod       = request.POST['response[payment_method]']
+        amount              = request.POST['response[chargedAmount]']
+        message             = request.POST['response[message]']
+        fraudstatus         = request.POST['response[fraudStatus]']
+
+        PaymentModel.objects.create(fullname=fullname, email=email, txnstatus=txnstatus, txnref=txnref, bankmessage=bankmessage, paymentmethod=paymentmethod, amount=amount, message=message, fraudstatus=fraudstatus)
+
+    return render(request, 'one-time-donation.html')
+
+
+def DimReocurringDonationView(request):
+    if request.method == 'POST':
+        fullname            = request.POST['response[fullname]']
+        email               = request.POST['response[email]']
+        txnstatus           = request.POST['response[txnStatus]']
+        txnref              = request.POST['response[txnRef]']
+        bankmessage         = request.POST['response[bank_message]']
+        paymentmethod       = request.POST['response[payment_method]']
+        amount              = request.POST['response[chargedAmount]']
+        message             = request.POST['response[message]']
+        fraudstatus         = request.POST['response[fraudStatus]']
+
+        PaymentModel.objects.create(fullname=fullname, email=email, txnstatus=txnstatus, txnref=txnref, bankmessage=bankmessage, paymentmethod=paymentmethod, amount=amount, message=message, fraudstatus=fraudstatus)
+
+    return render(request, 'diim-donation-reocurring.html')
+
+
+def MatchingDonation1MView(request):
+    if request.method == 'POST':
+        fullname            = request.POST['response[fullname]']
+        email               = request.POST['response[email]']
+        txnstatus           = request.POST['response[txnStatus]']
+        txnref              = request.POST['response[txnRef]']
+        bankmessage         = request.POST['response[bank_message]']
+        paymentmethod       = request.POST['response[payment_method]']
+        amount              = request.POST['response[chargedAmount]']
+        message             = request.POST['response[message]']
+        fraudstatus         = request.POST['response[fraudStatus]']
+
+        PaymentModel.objects.create(fullname=fullname, email=email, txnstatus=txnstatus, txnref=txnref, bankmessage=bankmessage, paymentmethod=paymentmethod, amount=amount, message=message, fraudstatus=fraudstatus)
+
+
+    return render(request, 'matching-donation-1m.html')
+
+
+def MatchingDonation5MView(request):
+    if request.method == 'POST':
+        fullname            = request.POST['response[fullname]']
+        email               = request.POST['response[email]']
+        txnstatus           = request.POST['response[txnStatus]']
+        txnref              = request.POST['response[txnRef]']
+        bankmessage         = request.POST['response[bank_message]']
+        paymentmethod       = request.POST['response[payment_method]']
+        amount              = request.POST['response[chargedAmount]']
+        message             = request.POST['response[message]']
+        fraudstatus         = request.POST['response[fraudStatus]']
+
+        PaymentModel.objects.create(fullname=fullname, email=email, txnstatus=txnstatus, txnref=txnref, bankmessage=bankmessage, paymentmethod=paymentmethod, amount=amount, message=message, fraudstatus=fraudstatus)
+
+
+    return render(request, 'matching-donation-5m.html')
+
+
+def MatchingDonation20MView(request):
+    if request.method == 'POST':
+        fullname            = request.POST['response[fullname]']
+        email               = request.POST['response[email]']
+        txnstatus           = request.POST['response[txnStatus]']
+        txnref              = request.POST['response[txnRef]']
+        bankmessage         = request.POST['response[bank_message]']
+        paymentmethod       = request.POST['response[payment_method]']
+        amount              = request.POST['response[chargedAmount]']
+        message             = request.POST['response[message]']
+        fraudstatus         = request.POST['response[fraudStatus]']
+
+        PaymentModel.objects.create(fullname=fullname, email=email, txnstatus=txnstatus, txnref=txnref, bankmessage=bankmessage, paymentmethod=paymentmethod, amount=amount, message=message, fraudstatus=fraudstatus)
+
+
+    return render(request, 'matching-donation-20m.html')

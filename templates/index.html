@@ -6,6 +6,10 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="CRAC (Community Resilience against COVID-19) is a not for profit initiative focused on building the resilience of effected communities with the sole aim of ending the pandemic through; Aggressive educational initiatives and altruistic projects
+Sustainable strategic interventions designed to activate selfless giving aimed at supporting the efforts of government to control the spread and, ultimately end the pandemic. ">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="CRAC (Community Resilience against COVID-19) is a not for profit initiative focused on building the resilience of effected communities with the sole aim of ending the pandemic through; Aggressive educational initiatives and altruistic projects
 		Sustainable strategic interventions designed to activate selfless giving aimed at supporting the efforts of government to control the spread and, ultimately end the pandemic. ">
 	<link rel="icon" type="image/png" sizes="192x192" href="https://res.cloudinary.com/media-outlet/image/upload/v1585311654/crac/favicon_xmgsj2.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="https://res.cloudinary.com/media-outlet/image/upload/v1585311654/crac/favicon_xmgsj2.png">
@@ -19,6 +23,34 @@
 	<link rel="stylesheet" href="{% static 'lib/OwlCarousel/owl.theme.default.min.css' %}">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 	<link rel="stylesheet" href="{% static 'dist/main.css' %}">
+	<!-- Start of Async Drift Code -->
+	<script>
+		"use strict";
+
+!function() {
+  var t = window.driftt = window.drift = window.driftt || [];
+  if (!t.init) {
+    if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
+    t.invoked = !0, t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ], 
+    t.factory = function(e) {
+      return function() {
+        var n = Array.prototype.slice.call(arguments);
+        return n.unshift(e), t.push(n), t;
+      };
+    }, t.methods.forEach(function(e) {
+      t[e] = t.factory(e);
+    }), t.load = function(t) {
+      var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
+      o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
+      var i = document.getElementsByTagName("script")[0];
+      i.parentNode.insertBefore(o, i);
+    };
+  }
+}();
+drift.SNIPPET_VERSION = '0.3.1';
+drift.load('92mmt63zcdyd');
+</script>
+	<!-- End of Async Drift Code -->
 </head>
 
 <body id="home" data-spy="scroll" data-target=".navbar" data-offset="100">
@@ -85,14 +117,14 @@
 					<span aria-hidden="true"><i class="ti-close"></i></span>
 				</button>
 			</div>
-			<div class="toast-body" id="toast">
-				<p> The donations open to the public on Wednesday 1 April 2020 </p>
+			<div class="toast-body">
+				<p> This feature will be available shortly. Check back later </p>
 			</div>
 		</div>
 		<nav class="mb-1 navbar navbar-expand-lg navbar-dark">
 			<div class="container">
-				<a class="navbar-brand" href="index.html">
-					<img src="{% static 'assets/core/logo.png' %}" alt="Logo" class="logo">
+				<a class="navbar-brand" href="#">
+					<img src="https://res.cloudinary.com/media-outlet/image/upload/v1585585610/crac/logo_faulog_bcd3139a03aa80f9475b30d1cda086ca_qmbajk.png" alt="Logo" class="logo">
 				</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#toggleNav" aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
 					<span></span>
@@ -135,7 +167,7 @@
 				<div class="collapse navbar-collapse" id="toggleNav">
 					<ul class="navbar-nav ml-auto">
 						<li class="nav-item">
-							<a id="donate" class=" btn cr-btn red--outline showToast" href="javascript:void(0)">
+							<a class=" btn cr-btn red--outline" href="{% url 'one-time-donation' %}">
 								Donate</a>
 						</li>
 					</ul>
@@ -149,44 +181,47 @@
 				<div class="carousel-inner">
 					<div class="carousel-item active">
 						<div class="page-hero__content col-lg-8 mx-auto">
-							<h1 class="title">Join the first 1 million free masks project.
-								Help in the fight against Covid-19 </h1>
-							<div class="col-lg-9 mx-auto">
-								<p class="desc">Give a mask to someone today by donating N100 or purchasing
-									your own mask for N200</p>
-							</div>
-							<div class="mt-4">
-								<a id="donate_now" href="javascript:void(0)" class="cr-btn fill showToast">Donate now</a>
+							<h1 class="title">Give from your disposable income. DIIM N100, N1,000, N10,000 or more weekly for the next 10 weeks as we support the vulnerable on a weekly basis at this time</h1>
+							<div class="mt-4 button-group">
+								<a href="{% url 'one-time-donation' %}" class="cr-btn fill">Donate now</a>
 								<a href="javascript:void(0)" class="cr-btn white--outline showToast">Buy Mask</a>
 							</div>
 						</div>
 					</div>
 					<div class="carousel-item">
 						<div class="page-hero__content col-lg-8 mx-auto">
-							<h1 class="title">1 Million masks every 30 days </h1>
-							<p class="desc">For every mask you buy, someone gets a free mask</p>
-							<div class="mt-4">
-								<a id="donate_now" href="javascript:void(0)" class="cr-btn fill showToast">Donate now</a>
+							<h1 class="title">Donate from your disposable income, let’s secure and put food on the table of the vulnerable. This is your response and you can!</h1>
+							<div class="mt-4 button-group">
+								<a href="{% url 'one-time-donation' %}" class="cr-btn fill">Donate now</a>
 								<a href="javascript:void(0)" class="cr-btn white--outline showToast">Buy Mask</a>
 							</div>
 						</div>
 					</div>
 					<div class="carousel-item">
 						<div class="page-hero__content col-lg-8 mx-auto">
-							<h1 class="title">Use that idle time to sew some masks</h1>
-							<p class="desc">Let’s make an additional 50,000 self-made mask every 30 days</p>
-							<div class="mt-4">
-								<a id="donate_now" href="javascript:void(0)" class="cr-btn fill showToast">Donate now</a>
+							<h1 class="title">#ThisIsMyResponse<br>
+								Am an answer to the voice of the ordinary Nigerian.
+								Everyone can do something. Donate N100 or more today!</h1>
+							<div class="mt-4 button-group">
+								<a href="{% url 'one-time-donation' %}" class="cr-btn fill">Donate now</a>
 								<a href="javascript:void(0)" class="cr-btn white--outline showToast">Buy Mask</a>
 							</div>
 						</div>
 					</div>
 					<div class="carousel-item">
 						<div class="page-hero__content col-lg-8 mx-auto">
-							<h1 class="title">All inclusive, take action now. Government cannot do it alone</h1>
-							<p class="desc">Join the CRAC Group today!</p>
-							<div class="mt-4">
-								<a id="donate_now" href="javascript:void(0)" class="cr-btn fill showToast">Donate now</a>
+							<h1 class="title">This is our response-platform to crisis & handing out help to the vulnerable in Nigeria</h1>
+							<div class="mt-4 button-group">
+								<a href="{% url 'one-time-donation' %}" class="cr-btn fill">Donate now</a>
+								<a href="javascript:void(0)" class="cr-btn white--outline showToast">Buy Mask</a>
+							</div>
+						</div>
+					</div>
+					<div class="carousel-item">
+						<div class="page-hero__content col-lg-8 mx-auto">
+							<h1 class="title">All-inclusive, take action now. Government cannot do it alone. Join hands with CRAC Group today!</h1>
+							<div class="mt-4 button-group">
+								<a href="{% url 'one-time-donation' %}" class="cr-btn fill">Donate now</a>
 								<a href="javascript:void(0)" class="cr-btn white--outline showToast">Buy Mask</a>
 							</div>
 						</div>
@@ -210,16 +245,20 @@
 					<div class="intro-cards__single yellow--bg">
 						<div class="intro-cards__wrapper">
 							<div class="intro-cards__icon">
-								<img src="{% static 'assets/icons/mask.png' %}" alt="mask icon">
-								<h4>PHASE ONE</h4>
+								<img src="{% static '/assets/icons/mask.png' %}" alt="mask icon">
+								<div>
+									<h4>PHASE ONE</h4>
+									<span>40% of Total Contribution</span>
+								</div>
 							</div>
 							<div class="intro-cards__body">
 								<p>Individual Support Project </p>
 								<div class="mt-2 p-1">
-									<span>- Safety mask distribution</span>
-									<span>- Hand sanitizer distribution</span>
-									<span>- Non-contact thermometer distribution</span>
-									<span>- Education campaign </span>
+									<span>- Safety Mask Distribution </span>
+									<span>- Hand Sanitizer Distribution</span>
+									<span>- Money/Foodstuff Distribution</span>
+									<span>- Non-Contact Thermometer Distribution</span>
+									<span>- Education Campaign</span>
 								</div>
 							</div>
 						</div>
@@ -229,17 +268,20 @@
 					<div class="intro-cards__single red--bg">
 						<div class="intro-cards__wrapper">
 							<div class="intro-cards__icon">
-								<img src="{% static 'assets/icons/donate.png' %}" alt="donate icon">
-								<h4>PHASE TWO</h4>
+								<img src="{% static '/assets/icons/donate.png' %}" alt="donate icon">
+								<div>
+									<h4>PHASE TWO</h4>
+									<span>40% of Total Contribution</span>
+								</div>
 							</div>
 							<div class="intro-cards__body">
-								<p>Care Givers
-									Support Project</p>
+								<p>Care Givers Support Project</p>
 								<div class="mt-2 p-1">
-									<span>- Safety gears distribution</span>
-									<span>- Hospital beds & testing kits </span>
-									<span>- Respiratory equipment </span>
-									<span>- COVID-19 Research Support </span>
+									<span>- Safety Gears Distribution</span>
+									<span>- Hospital Beds Support </span>
+									<span>- Testing Kits Support</span>
+									<span>- Respiratory Equipment </span>
+									<span>- COVID-19 Research Support</span>
 								</div>
 							</div>
 						</div>
@@ -249,16 +291,20 @@
 					<div class="intro-cards__single blue--bg">
 						<div class="intro-cards__wrapper">
 							<div class="intro-cards__icon">
-								<img src="{% static 'assets/icons/delivery.png' %}" alt="delivery icon">
-								<h4>PHASE THREE</h4>
+								<img src="{% static '/assets/icons/delivery.png' %}" alt="delivery icon">
+								<div>
+									<h4>PHASE THREE</h4>
+									<span>20% of Total Contribution</span>
+								</div>
 							</div>
 							<div class="intro-cards__body">
 								<p>Social Health Interventions Project</p>
 								<div class="mt-2 p-1">
-									<span>- Counseling Support </span>
-									<span>- Re-Integration support </span>
-									<span>- Scholarship & Educational Support </span>
-									<span>- Community sensitization against stigmatization </span>
+									<span>- Mental Health Support</span>
+									<span>- Trauma Care Center </span>
+									<span>- Re-Integration Support </span>
+									<span>- Scholarship & Educational Support</span>
+									<span>- Community Sensitization against Stigmatization</span>
 								</div>
 							</div>
 						</div>
@@ -267,7 +313,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="about page-section" id="about">
+	<section class="about page-section" id="about" data-aos="fade-up">
 		<div class="modal fade about-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="aboutModal">
 			<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
 				<div class="modal-content">
@@ -279,27 +325,35 @@
 					<div class="modal-body">
 						<div class="about-modal-content">
 							<h1 class="title"> About CRAC Group</h1>
-							<p class="desc mt-3"> CRAC (Community Resilience against COVID-19) is a not for profit initiative focused on building the resilience of effected communities with the sole aim of ending the pandemic through; </p>
+							<p class="desc mt-3"> CRAC (Community Resilience against COVID-19) is a non-profit initiative formed by a number of concerned NGOs and Private Institutions with focused on building the resilience of affected communities with the sole aim of ending the pandemic through; </p>
 							<ul class="mt-3">
-								<li>Aggressive educational initiatives and altruistic projects</li>
-								<li>Sustainable strategic interventions designed to activate selfless giving aimed at supporting the efforts of government to control the spread and, ultimately end the pandemic. </li>
+								<li>Aggressive educational initiatives & altruistic projects </li>
+								<li>Sustainable strategic interventions designed to, activate selfless giving (aimed at supporting the efforts of government to control the spread , ultimately end the pandemic and fund strategic well-being initiatives required after the pandemic)</li>
 							</ul>
-							<p class="desc mt-3"> The period and the challenges are one, which requires the Collaboration of, non-profit and for profit enterprises, social and professional groups, and individuals determined to ,provide support, transparently and every form of creativity, synonymous with the world today. </p>
-							<p class="desc mt-3">CRAC Group is motivated by the answer to the question, "can governments affected by the COVID- pandemic do it alone?" </p>
+							<p class="desc mt-3">The period and the challenges are one, which requires the Collaboration of, non-profit and for profit enterprises, social and professional groups, and individuals determined to provide support, transparently and every form of creativity, synonymous with the world today. </p>
+							<p class="desc mt-3">CRAC Group is motivated by the answer to the question, "can government fight the COVID-19 pandemic do it alone?" </p>
 							<p class="desc mt-3">
-								The Community Resilience Against COVID-19 (CRAC) is powered by the collaborative effort of; Zebullon Developers Network, Host Mining Community Development Initiative (HMCDI), Krowdback, Secure ‘D’ Future (SDF), Lifeline Care Association, Glade Pay, Akin Sanda & Co, Sapphire Group and House 14 Hospitality.
+								The Community Resilience Against COVID-19 (CRAC) is powered by the collaborative effort of; Host Mining Community Development Initiative (HMCDI), Secure The Future International Initiative (SDF), Lenata Development Initiative, Lifeline Care Association, Zebullon Developers Network, Krowdback, Glade Pay, Sun Trust Bank, Akin Sanda & Co, Sapphire Group and House 14 Hospitality.
 							</p>
 							<p class="desc mt-3">
-								CRAC donation strategy is based on the concept of Diiming designed and developed by Samuel Sobayo & Daniel Oratokhai. Diiming (Disposable Income Investment Model) is a funding system where disposable funds readily available to the lowest of the pyramid (N100 or 25 Cents) can be put aside daily by denying self of some un-necessary spend for the day into a locked investment or an interest.
+								CRAC donation strategy is based on the concept of Diiming designed and developed by Samuel Sobayo & Daniel Oratokhai.
+								Diiming (Disposable Income Investment Model) is a funding system where disposable funds readily available to the lowest of the pyramid (N100 or 25 Cents) can be put aside daily by denying self of some un-necessary spend for the day into a locked investment or an interest.
 							</p>
 							<p class="desc mt-3">
-								Donations support from this efforts will be targeted to basic safety materials like mask and sanitizers to those who cannot afford one. After which we will direct support to care givers and health workers to ensure patients get the care they need and frontline workers get essential supplies and information.
-							</p>
-							<p class="desc mt-3">
+								Donations support from these efforts will be targeted to basic safety materials like mask and sanitizers to those who cannot afford one. After which we will direct support to care givers and health workers to ensure patients get the care they need and frontline workers get essential supplies and information.
 								The government cannot do this alone; we're all in this together.
 							</p>
+							<p class="desc mt-3">
+								“Delivery of social, economic and well-being related relief to Nigerians during the scourge and after through strategic support and intervention initiatives focused on building the Resilience of Nigerians against COVID 19 through the robust Community structure of Nigeria.”
+							</p>
+							<p class="desc mt-3">Ultimately, we hope this will help to;</p>
+							<ul class="mt-3">
+								<li>Create the mind change needed for Nigerians towards support </li>
+								<li>Create a system for national support against impacts associated to COVID 19 </li>
+								<li>Leverage the power of Diiming and allow people to sacrifice the funds for their cravings to support another in need</li>
+							</ul>
 							<div class="mt-4">
-								<img src="{% static 'assets/core/logo.png' %}" alt="Logo" class="logo">
+								<img src="https://res.cloudinary.com/media-outlet/image/upload/v1585585610/crac/logo_faulog_bcd3139a03aa80f9475b30d1cda086ca_qmbajk.png" alt="Logo" class="logo">
 							</div>
 						</div>
 					</div>
@@ -311,15 +365,84 @@
 		</div>
 		<div class="container">
 			<div class="page-section__content text-center col-lg-10 p-0 mx-auto">
-				<h3 class="title">About CRAC</h3>
-				<p class="desc mt-2">CRAC (Community Resilience against COVID-19) is a not for profit initiative focused on building the resilience of effected communities with the sole aim of ending the pandemic.</p>
+				<h3 class="title">About CRAC Group</h3>
+				<p class="desc mt-2">CRAC (Community Resilience against COVID-19) is a non-profit initiative formed by a number of concerned NGOs and Private Institutions with focused on building the resilience of affected communities with the sole aim of ending the pandemic.</p>
 				<div class="mt-3">
 					<a href="#" class="is-link" data-toggle="modal" data-target="#aboutModal">Learn More</a>
 				</div>
 			</div>
 		</div>
 	</section>
-	<section class="page-section" id="video">
+	<!-- 	<section class="page-section">
+		<div class="container">
+			<div class="page-section__content text-center col-lg-10 p-0 mx-auto">
+				<h3 class="title">Trustees</h3>
+				<p class="desc mt-2"></p>
+			</div>
+			<div class="carousel-wrap">
+				<div class="owl-carousel" id="trusteeSlider">
+					<div class="item">
+						<div>
+							<div class="trustee-area">
+								<img src="./assets/page_images/george.jpeg" alt="Okechukwu George Omunakwe">
+								<div class="profile">
+									<h3 class="name">Okechukwu George Omunakwe</h3>
+									<p class="bio">Husband and a father of two wonderful boys (twin) I am  a Civil Engineer  a communal entusiast, a Philanthropist, An ardent Rotarian, a Major donor, a past Vice President, President and chairman of other prestigious offices under the umbrella of the Rotary International, an Equity advocate and widely traveled.</p>
+									<div class="mt-2">
+										<a href="#" class="social-link"><i class="ti-linkedin"></i> LinkedIn</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div>
+							<div class="trustee-area">
+								<img src="./assets/page_images/george.jpeg" alt="Okechukwu George Omunakwe">
+								<div class="profile">
+									<h3 class="name">Okechukwu George Omunakwe</h3>
+									<p class="bio">Husband and a father of two wonderful boys (twin) I am  a Civil Engineer  a communal entusiast, a Philanthropist, An ardent Rotarian, a Major donor, a past Vice President, President and chairman of other prestigious offices under the umbrella of the Rotary International, an Equity advocate and widely traveled.</p>
+									<div class="mt-2">
+										<a href="#" class="social-link"><i class="ti-linkedin"></i> LinkedIn</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div>
+							<div class="trustee-area">
+								<img src="./assets/page_images/george.jpeg" alt="Okechukwu George Omunakwe">
+								<div class="profile">
+									<h3 class="name">Okechukwu George Omunakwe</h3>
+									<p class="bio">Husband and a father of two wonderful boys (twin) I am  a Civil Engineer  a communal entusiast, a Philanthropist, An ardent Rotarian, a Major donor, a past Vice President, President and chairman of other prestigious offices under the umbrella of the Rotary International, an Equity advocate and widely traveled.</p>
+									<div class="mt-2">
+										<a href="#" class="social-link"><i class="ti-linkedin"></i> LinkedIn</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div>
+							<div class="trustee-area">
+								<img src="./assets/page_images/george.jpeg" alt="Okechukwu George Omunakwe">
+								<div class="profile">
+									<h3 class="name">Okechukwu George Omunakwe</h3>
+									<p class="bio">Husband and a father of two wonderful boys (twin) I am  a Civil Engineer  a communal entusiast, a Philanthropist, An ardent Rotarian, a Major donor, a past Vice President, President and chairman of other prestigious offices under the umbrella of the Rotary International, an Equity advocate and widely traveled.</p>
+									<div class="mt-2">
+										<a href="#" class="social-link"><i class="ti-linkedin"></i> LinkedIn</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</section> -->
+	<section class="page-section" id="video" data-aos="fade-up">
 		<div class="container">
 			<div class="page-section__content text-center col-lg-10 mx-auto">
 				<h3 class="title">Videos</h3>
@@ -329,7 +452,7 @@
 				<div class="owl-carousel" id="videoSlider">
 					<div class="item">
 						<div>
-							<div class="vid_box" style="background: url('https://res.cloudinary.com/media-outlet/image/upload/v1585428066/crac/make-face-mask_hop1z7.png')">
+							<div class="vid_box" style="background: url('https://res.cloudinary.com/media-outlet/image/upload/v1585585365/crac/make-face-mask_hop1z7_afb32bcd86d3be295f5cfd52b2a2cc03_jstqst.png')">
 								<div class="play_btn " data-toggle="modal" data-target="#makeFaceMask">
 									<i class="ti-control-play"></i>
 								</div>
@@ -396,10 +519,10 @@
 			</div>
 		</div>
 	</section>
-	<section class="page-section mask-donation" id="donation">
+	<section class="page-section mask-donation" id="donation" data-aos="fade-up">
 		<div class="container">
 			<div class="page-section__content text-center col-lg-10 p-0 mx-auto">
-				<h4 class="title--sm text-white">DIMMING DONATION</h4>
+				<h4 class="title--sm text-white">DIIMING DONATION</h4>
 				<h3 class="title text-white">Lock an amount to Diim over 10 weeks to support the pre & post effect of COVID-19</h3>
 				<p class="desc mt-2 text-white">Diiming (Disposable Income Investment Model - DIIM) is a funding system developed by Samuel Olatunde Sobayo & Daniel Oratokhai, where disposable funds readily available to the lowest of the pyramid (N100 or 25 Cents) can be put aside daily or weekly by denying self of some non-essential wants for the day and diverting it to a locked investment or an interest or cause as in this case.</p>
 				<div class="row pt-5 mt-3">
@@ -410,7 +533,7 @@
 									<span>DIIM 1</span>
 								</div>
 								<div class="content text-center">
-									<p> N100 & Above <br>- One Time </p>
+									<p> N100 & Above <br>- 10 Weeks </p>
 								</div>
 								<div class="mt-3">
 									<a href="javascript:void(0)" class="btn cr-btn fill showToast">Donate</a>
@@ -425,7 +548,7 @@
 									<span>DIIM 2</span>
 								</div>
 								<div class="content text-center">
-									<p>N100 & Above <br>- For 10 Weeks</p>
+									<p>N1000 & Above <br>- For 10 Weeks</p>
 								</div>
 								<div class="mt-3">
 									<a href="javascript:void(0)" class="btn cr-btn fill showToast">Donate</a>
@@ -452,7 +575,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="page-section">
+	<section class="page-section" data-aos="fade-up">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-4 p-0">
@@ -471,11 +594,11 @@
 							<div class="product-card">
 								<div class="product-card__body">
 									<div class="mb-2">
-										<img src="https://res.cloudinary.com/media-outlet/image/upload/v1585422850/crac/mask_udebsb.png" alt="Face Masks">
+										<img src="https://res.cloudinary.com/media-outlet/image/upload/v1585585664/crac/mask_udebsb_a627cb89e81dbbcf8cb93d411110ef58_u40ujc.png" alt="Face Masks">
 									</div>
 									<h4 class="label p-0">Donate Safety Kits</h4>
 									<div class="mt-4">
-										<a href="javascript:void(0)" class="cr-btn fill showToast">Donate</a>
+										<a href="{% url 'product-donation' %}" class="cr-btn fill">Donate</a>
 									</div>
 								</div>
 							</div>
@@ -484,11 +607,11 @@
 							<div class="product-card">
 								<div class="product-card__body">
 									<div class="mb-2">
-										<img src="https://res.cloudinary.com/media-outlet/image/upload/v1585423006/crac/food_i2rjrh.png" alt="Food Image">
+										<img src="https://res.cloudinary.com/media-outlet/image/upload/v1585585479/crac/food_i2rjrh_ca44bfd0110795a5f1f8d487080caecf_epgdpy.png" alt="Food Image">
 									</div>
 									<h4 class="label p-0">Donate <br> Food</h4>
 									<div class="mt-4">
-										<a href="javascript:void(0)" class="cr-btn fill showToast">Donate </a>
+										<a href="{% url 'product-donation' %}" class="cr-btn fill">Donate </a>
 									</div>
 								</div>
 							</div>
@@ -497,11 +620,11 @@
 							<div class="product-card">
 								<div class="product-card__body">
 									<div class="mb-2">
-										<img src="https://res.cloudinary.com/media-outlet/image/upload/v1585422999/crac/menu_gxovtn.png" alt="Plus Icon">
+										<img src="https://res.cloudinary.com/media-outlet/image/upload/v1585585561/crac/menu_gxovtn_7b0d9a5ddbe2ce715dc49fc3c1ed521e_xm6c4a.png" alt="Choose Icon">
 									</div>
 									<h4 class="label p-0">Choose what to Donate</h4>
 									<div class="mt-4">
-										<a href="javascript:void(0)" class="cr-btn fill showToast">Donate</a>
+										<a href="{% url 'product-donation' %}" class="cr-btn fill">Donate</a>
 									</div>
 								</div>
 							</div>
@@ -511,8 +634,8 @@
 			</div>
 		</div>
 	</section>
-	<section class="page-section" id="donation">
-		<div class="container border-bottom ">
+	<section class="page-section" id="donation" data-aos="fade-up">
+		<div class="container">
 			<div class="page-section__content text-center col-lg-10 mx-auto">
 				<h3 class="title--sm">MATCHING DONATION</h3>
 				<h4 class="large-desc mt-2 mb-3">Commit to match any of these public donations </h4>
@@ -523,13 +646,13 @@
 					<div class="m-donation-card">
 						<div class="m-donation-card__body">
 							<div class="icon">
-								<img src="{% static 'assets/icons/hand-love.png' %}" alt="donate icon">
+								<img src="https://res.cloudinary.com/media-outlet/image/upload/v1585585828/crac/hand-love_53511a4fb3ca009e14326a1c877f4d7f_hs08fd.png" alt="donate icon">
 							</div>
 							<div class="price text-center">
 								<p> N1m & Above ($3k+)</p>
 							</div>
 							<div class="">
-								<a href="javascript:void(0)" class="btn cr-btn fill showToast">Match Donation</a>
+								<a href="{% url 'matching-donation-1m' %}" class="btn cr-btn fill">Match Donation</a>
 							</div>
 						</div>
 					</div>
@@ -538,13 +661,13 @@
 					<div class="m-donation-card">
 						<div class="m-donation-card__body">
 							<div class="icon">
-								<img src="{% static 'assets/icons/hand-love.png' %}" alt="donate icon">
+								<img src="https://res.cloudinary.com/media-outlet/image/upload/v1585585828/crac/hand-love_53511a4fb3ca009e14326a1c877f4d7f_hs08fd.png" alt="donate icon">
 							</div>
 							<div class="price text-center">
 								<p>N5m & Above ($15k+) </p>
 							</div>
 							<div class="">
-								<a href="javascript:void(0)" class="btn cr-btn fill showToast">Match Donation</a>
+								<a href="{% url 'matching-donation-5m' %}" class="btn cr-btn fill">Match Donation</a>
 							</div>
 						</div>
 					</div>
@@ -553,13 +676,13 @@
 					<div class="m-donation-card">
 						<div class="m-donation-card__body">
 							<div class="icon">
-								<img src="{% static 'assets/icons/hand-love.png' %}" alt="donate icon">
+								<img src="https://res.cloudinary.com/media-outlet/image/upload/v1585585828/crac/hand-love_53511a4fb3ca009e14326a1c877f4d7f_hs08fd.png" alt="donate icon">
 							</div>
 							<div class="price text-center">
 								<p> N20m & Above ($60k+)</p>
 							</div>
 							<div class="">
-								<a href="javascript:void(0)" class="btn cr-btn fill showToast">Match Donation</a>
+								<a href="{% url 'matching-donation-20m' %}" class="btn cr-btn fill">Match Donation</a>
 							</div>
 						</div>
 					</div>
@@ -567,7 +690,58 @@
 			</div>
 		</div>
 	</section>
-	<section class="page-section mt-5">
+	<section class="page-section donation-counter" data-aos="fade-up">
+		<div class="container">
+			<div class="row no-gutters">
+				<div class="col-lg-6 p-0 pt-1">
+					<div class="page-section__content pl-lg-0 p-0">
+						<div>
+							<img src="https://res.cloudinary.com/media-outlet/image/upload/v1585562071/crac/black-girl-smiling_rtfyxn.jpg" class="d-block mx-auto">
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6 pt-1 p-0">
+					<div class="donation-counter__body red--bg">
+						<div class="col-lg-12">
+							<div class="text-left">
+								<h4 class="title">Donation Progress</h4>
+								<p class="desc mt-1 col-lg-6 p-0">Get involved because you can! Give as small as N100 or select a matching fund. Let’s together help the ordinary Nigeria! Need help, call 0700-CRAC-GROUP (0700-2722-47687)</p>
+							</div>
+							<div class="mt-4 mb-2">
+								<h4 class="amount-raised">N0 <span>raised so far <em class="noti">(Donation starts Wed, April 1st, 2020)</em></span></h4>
+								<div class="progress">
+									<div class="bar" style="width:0">
+									</div>
+								</div>
+								<div class="d-flex align-items-center justify-content-between target-info">
+									<div>
+										<p>0% of N5,000,000,000 Goal</p>
+									</div>
+								</div>
+							</div>
+							<div class="info">
+								<div class="text-left">
+									<div class="mt-5 action d-flex align-items-center justify-content-between">
+										<div class="button-group">
+											<a href="#donation" class="cr-btn white--outline">Donate</a>
+										</div>
+										<!-- <div class="outlineSocialShare">
+											<p>Share:</p>
+											<a href="#"><i class="ti-twitter"></i></a>
+											<a href="#"><i class="ti-linkedin"></i></a>
+											<a href="#"><i class="ti-facebook"></i></a>
+											<a href="#"><i class="ti-link"></i></a>
+										</div> -->
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="page-section pt-1" data-aos="fade-up">
 		<div class="container pt-3 pb-1">
 			<h3 class="large-desc mt-5 text--red text-center"><strong>You are in safe hands!</strong> </h3>
 			<div class="row">
@@ -575,7 +749,7 @@
 					<div class="page-section__content text-center  mt-2 mb-3 pt-4">
 						<h3 class="title--sm mt-2  p-0">All payment are processed by Glade Pay</h3>
 						<div class="mt-3">
-							<img src="https://res.cloudinary.com/media-outlet/image/upload/v1585139005/crac/gladepay-logo2_ygzjyw.jpg" alt="Glade Pay Logo" class="single-logo d-block mx-auto">
+							<img src="https://res.cloudinary.com/media-outlet/image/upload/v1585585757/crac/gladepay-logo2_ygzjyw_d3d3bedee29d90eecf2c9721f7da3ee1_litco5.jpg" alt="Glade Pay Logo" class="single-logo d-block mx-auto">
 							<a href="https://glade.ng" class="is-link plain" target="_blank">www.glade.ng</a>
 						</div>
 					</div>
@@ -584,7 +758,7 @@
 					<div class="page-section__content text-center  mt-2 mb-3 pt-4">
 						<h3 class="title--sm mt-2 p-0">All funds are Escrowed and Managed by Sun Trust Bank</h3>
 						<div class="mt-3">
-							<img src="https://res.cloudinary.com/media-outlet/image/upload/v1585227555/crac/SunTrust-new-white-logo_y8o1r9.jpg" alt="SunTrust Bank Logo" class="single-logo d-block mx-auto">
+							<img src="https://res.cloudinary.com/media-outlet/image/upload/v1585585923/crac/SunTrust-new-white-logo_y8o1r9_8d7168e5bf206d67b5c334e8786103b5_hf74mv.jpg" alt="SunTrust Bank Logo" class="single-logo d-block mx-auto">
 							<a href="https://www.suntrustng.com" class="is-link plain" target="_blank">www.suntrustng.com</a>
 						</div>
 					</div>
@@ -592,7 +766,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="page-section pt-0">
+	<section class="page-section pt-0" data-aos="fade-up">
 		<div class="container  pb-0">
 			<div class="row">
 				<div class="col-lg-6">
@@ -607,9 +781,9 @@
 						<div>
 							<h4 class="large-desc mt-2 mb-3 p-0">GO TAKE A TEST</h4>
 							<p class="desc mt-2">We advocate not waiting for the last minute before going for testing. Many have gone because of self-isolation and self-medication to deal with the associated symptoms of COVID-19. </p>
-							<p class="desc mt-2">Our focus is to get everyone to understand the importance of early direction.</p>
+							<p class="desc mt-2">Our focus is to get everyone to understand the importance of early detection.</p>
 							<p class="desc mt-2"> We shall be launching the test kit projects thirty (30) days after the first 1,000,000 mask project. We are aware of the cost of the test kit which is between $30 -$45 per kit. Government cannot do it alone. </p>
-							<p class="desc mt-2">Our initiative is self-help (let’s help ourselves based on altruistic principles) 100,000 test kits is a fair target. <br>
+							<p class="desc mt-2">Our initiative is self-help (let’s help ourselves based on altruistic principles). <br>
 								LET'S DO THIS TOGETHER! </p>
 						</div>
 					</div>
@@ -617,7 +791,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="page-section">
+	<section class="page-section" data-aos="fade-up">
 		<div class="container">
 			<div class="row">
 				<!-- ***** FAQ Start ***** -->
@@ -652,7 +826,7 @@
 							</div>
 							<div id="faqCollapse-2" class="collapse" aria-labelledby="faqHeading-2" data-parent="#accordion">
 								<div class="card-body">
-									<p>“Delivery of social, economic and well-being related relief to Nigerians during the scourge and after through strategic support and intervention initiatives focused on building the Resilience of Nigerians against COVID 19 through th</p>
+									<p>“Delivery of social, economic and well-being related relief to Nigerians during the scourge and after through strategic support and intervention initiatives focused on building the Resilience of Nigerians against COVID 19 through the robust Community structure of Nigeria.</p>
 									<p>Ultimately, we hope this will help to;</p>
 									<span class="d-block mt-1 pl-1">1. Create the mind change needed for Nigerians towards support</span>
 									<span class="d-block mt-1 pl-1">2. Create a system for national support against impacts associated to COVID 19 </span>
@@ -699,7 +873,7 @@
 							</div>
 							<div id="faqCollapse-6" class="collapse" aria-labelledby="faqHeading-6" data-parent="#accordion">
 								<div class="card-body">
-									<p>The Community Resilience Against COVID-19 is a Resilience initiative that enables individuals, corporations, foundations, and other organizations around the country to directly support the work to help states prevent, detect, and respond to the COVID-19 pandemic. The Government cannot do it alone.</p>
+									<p>The Community Resilience Against COVID-19 is a Resilience initiative that enables individuals, corporations, foundations, and other organizations around the country and the world to directly support the work to help states prevent, detect, and respond to the COVID-19 pandemic. The Government cannot do it alone.</p>
 									<p>The funds would be used for;</p>
 									<span class="d-block mt-1 pl-1">- The production of masks to be distributed free and sold with the concept of purchase support (where for every one you buy, someone else gets one free)</span>
 									<span class="d-block mt-1 pl-1">- Hand sanitizer distribution</span>
@@ -739,6 +913,24 @@
 								<div class="card-body">
 									<p>Donations made directly to CRAC project account or through the website are tax-deductible (Nigeria Only) to the extent allowable by law.</p>
 									<p>For global donations, you can do that through the website or email, <a href="mailto:donations@cracgroup.org" class="is-link plain">donations@cracgroup.org</a> </p>
+								</div>
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-header" id="faqHeading-8-1">
+								<div class="mb-0">
+									<h5 class="faq-title" data-toggle="collapse" data-target="#faqHeading-8-1" data-aria-expanded="false" data-aria-controls="faqHeading-8-1">
+										WHAT ARE THE PAYMENT PROCESSOR CHARGES ON CARD PAYMENT
+									</h5>
+								</div>
+							</div>
+							<div id="faqHeading-8-1" class="collapse" aria-labelledby="faqHeading-8-1" data-parent="#accordion">
+								<div class="card-body">
+									<p><strong>For Local Transactions:</strong></p>
+									<p>All donations from N100 to N2,500 will be charged at 1.5% + N0 </p>
+									<p>All donations above N2,500 will be charged at 1.5% + N100</p>
+									<p><strong>For International Transaction:</strong></p>
+									<p>For international transactions, all donations will be charged at 3.9% + N100</p>
 								</div>
 							</div>
 						</div>
@@ -801,7 +993,7 @@
 							</div>
 							<div id="faqCollapse-14" class="collapse" aria-labelledby="faqHeading-14" data-parent="#accordion">
 								<div class="card-body">
-									<p>1Several funding announcements have already been made, underlining that people and organizations everywhere are eager to help solve this shared global problem. </p>
+									<p>Several funding announcements have already been made, underlining that people and organizations everywhere are eager to help solve this shared global problem. </p>
 									<p>The fund is structured as a response of every Nigerian to support a coordinated effort to manage a national disaster.</p>
 									<p>This is the Nigerian Response. This is your response.</p>
 								</div>
@@ -866,7 +1058,7 @@
 									<span class="d-block mt-1 pl-1">1. Project account was secured by 2 of the NGOs in the group (we are open to adding more)</span>
 									<span class="d-block mt-1 pl-1">2. Signatories are from 4 organizations in the group</span>
 									<span class="d-block mt-1 pl-1">3. All funds are escrowed and monitored by the partner bank Sun Trust Bank </span>
-									<span class="d-block mt-1 pl-1">4. All disbursement will carried out by the partner bank (Sun Trust Bank) directly to vendors </span>
+									<span class="d-block mt-1 pl-1">4. All disbursement will be carried out by the partner bank (Sun Trust Bank) directly to vendors </span>
 									<span class="d-block mt-1 pl-1">5. Board will approve before any disbursement outside cost put aside for administrative expenses </span>
 									<span class="d-block mt-1 pl-1">6. All fees and administrative cost will be reported weekly </span>
 									<span class="d-block mt-1 pl-1">7. Details of all vendors will be made public (and we will be open to accept a better deal if any)</span>
@@ -922,17 +1114,12 @@
 							</div>
 							<div id="faqCollapse-21" class="collapse" aria-labelledby="faqHeading-21" data-parent="#accordion">
 								<div class="card-body">
-									<p>Funds after the pandemic will be used for the Phase 3 of our CRAC Strategic Plan. </p>
-									<p>Secure The Future International Initiative (SDF) - shall champion the support and reintegration services for selected victims in need.</p>
-									<p><strong>PHASE 3:</strong></p>
-									<p>Social Health Interventions Project</p>
-									<span class="d-block mt-1 pl-1">1. Card payment on the website </span>
+									<span class="d-block mt-1 pl-1">1.Card payment on the website (local and international) </span>
 									<span class="d-block mt-1 pl-1">2. Bank Payment on the website </span>
 									<span class="d-block mt-1 pl-1">3. USSD Code Payment </span>
-									<span class="d-block mt-1 pl-1">4. COVID-19 Bot Assistant </span>
-									<span class="d-block mt-1 pl-1">5. Local Bank Transfer or Deposit</span>
-									<span class="d-block mt-1 pl-1">6. International Wire Transfer</span>
-									<span class="d-block mt-1 pl-1">7. International Wire Transfer</span>
+									<span class="d-block mt-1 pl-1">4. Local Bank Transfer or Deposit</span>
+									<span class="d-block mt-1 pl-1">5. International Wire Transfer</span>
+									<span class="d-block mt-1 pl-1">6. Western Union, Moneygram, etc</span>
 								</div>
 							</div>
 						</div>
@@ -963,7 +1150,7 @@
 									<p>You can reach Community Resilience Against COVID-19 via; </p>
 									<p><strong>CRAC Group - Program Headquarter;</strong></p>
 									<p>House 14 Apartment: 14, Kudang Street, off Monrovia Street, Wuse 2, Abuja-Nigeria.</p>
-									<p>Tel:+234 815 656 1293 | info@cracgroup.org</p>
+									<p>Tel: +234 908 528 9871 | info@cracgroup.org</p>
 									<p>All information and contact details are on the website; <a href="https://www.cracgroup.org" class="is-link plain">www.cracgroup.org</a> </p>
 								</div>
 							</div>
@@ -973,7 +1160,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="page-section pb-0" id="supporters">
+	<section class="page-section pb-0" id="supporters" data-aos="fade-up">
 		<div class="container">
 			<div class="page-section__content text-center col-lg-10 mx-auto">
 				<h3 class="title">Partners & Coordinators</h3>
@@ -998,24 +1185,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="item">
-						<div class="supporters-info">
-							<div>
-								<div class="logo">
-									<img src="https://res.cloudinary.com/media-outlet/image/upload/v1585227556/crac/Brekete_Family_oqgekh.png" alt="Brekete Family Logo">
-								</div>
-								<div class="info mt-2">
-									<p><strong>Brekete Family </strong></p>
-									<div class="content-wrapper">
-										<p>Brekete Family is a reality radio and television programme focused on human rights that are aired on terrestrial radio, cable television and streamed online on social media. It airs on Human Rights Radio 101.1 in Abuja, Nigeria.</p>
-									</div>
-									<div class="mt-3">
-										<a href="Breketefamily.com" class="website-link" target="_blank">Visit website</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+
 					<div class="item">
 						<div class="supporters-info">
 							<div>
@@ -1075,7 +1245,7 @@
 						<div class="supporters-info">
 							<div>
 								<div class="logo">
-									<img src="https://res.cloudinary.com/media-outlet/image/upload/v1585202747/crac/new-logo_uxmylf.jpg" alt="Lifeline Logo">
+									<img src="https://res.cloudinary.com/media-outlet/image/upload/v1585585708/crac/new-logo_uxmylf_7bee6b10e9596361c88fbe1214029066_csh3m4.jpg" alt="Lifeline Logo">
 								</div>
 								<div class="info mt-2">
 									<p><strong>Lifeline Care Association</strong> </p>
@@ -1093,7 +1263,7 @@
 						<div class="supporters-info">
 							<div>
 								<div class="logo">
-									<img src="https://res.cloudinary.com/media-outlet/image/upload/v1585139007/crac/zebullon-logo_krtxhd.png" alt="Zebullon Logo">
+									<img src="https://res.cloudinary.com/media-outlet/image/upload/v1585585425/crac/zebullon-logo_krtxhd_e5d92476c1a98adb716445289e277d7a_ws6zy3.png" alt="Zebullon Logo">
 								</div>
 								<div class="info mt-2">
 									<p><strong>Zebullon </strong></p>
@@ -1111,7 +1281,7 @@
 						<div class="supporters-info">
 							<div>
 								<div class="logo">
-									<img src="https://res.cloudinary.com/media-outlet/image/upload/v1585139005/crac/gladepay-logo2_ygzjyw.jpg" alt="Glade Pay Logo">
+									<img src="https://res.cloudinary.com/media-outlet/image/upload/v1585585757/crac/gladepay-logo2_ygzjyw_d3d3bedee29d90eecf2c9721f7da3ee1_litco5.jpg" alt="Glade Pay Logo">
 								</div>
 								<div class="info mt-2">
 									<p><strong>Glade </strong></p>
@@ -1129,7 +1299,7 @@
 						<div class="supporters-info">
 							<div>
 								<div class="logo">
-									<img src="https://res.cloudinary.com/media-outlet/image/upload/v1585227555/crac/SunTrust-new-white-logo_y8o1r9.jpg" alt="SunTrust Bank Logo">
+									<img src="https://res.cloudinary.com/media-outlet/image/upload/v1585585923/crac/SunTrust-new-white-logo_y8o1r9_8d7168e5bf206d67b5c334e8786103b5_hf74mv.jpg" alt="SunTrust Bank Logo">
 								</div>
 								<div class="info mt-2">
 									<p><strong>SunTrust Bank </strong> </p>
@@ -1184,7 +1354,7 @@
 						<div class="supporters-info">
 							<div>
 								<div class="logo">
-									<img src="https://res.cloudinary.com/media-outlet/image/upload/v1585187388/crac/house_14_logoX_enzde3.jpg" alt="House 14 Logo">
+									<img src="https://res.cloudinary.com/media-outlet/image/upload/v1585585338/crac/house_14_logoX_enzde3_a3a43eea0340ded924d13f32c988b142_tcz4e7.jpg" alt="House 14 Logo">
 								</div>
 								<div class="info mt-2">
 									<p><strong>House 14 </strong> </p>
@@ -1202,7 +1372,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="page-section pt-0">
+	<section class="page-section pt-0" data-aos="fade-up">
 		<div class="container">
 			<div class="page-section__content text-center col-lg-10 mx-auto">
 				<h3 class="title">Beneficiaries</h3>
@@ -1263,7 +1433,7 @@
 					<div class="container">
 						<div class="col-lg-12 p-0">
 							<div class="auth-area__content p-0">
-								<form class="pt-4">
+								<form class="pt-4" accept-charset="UTF-8" action="https://getform.io/f/5c4a8933-de3b-4a4e-95d2-590824d3a42e" method="POST" enctype="multipart/form-data" target="_blank" id="volunteersForm">
 									<div class="auth-area__header">
 										<h3>Register as Charity Organisation/Volunteer</h3>
 										<p>Join us as a Charity Organisation/Volunteer to distribute free mask to beneficiaries</p>
@@ -1271,54 +1441,93 @@
 									<div class="row">
 										<div class="col-lg-12">
 											<div class="styled-input wide">
-												<input id="volounteer_name" type="text" required />
+												<input id="volounteer_name" type="text" name="volunteerName" required />
 												<label>Name</label>
 											</div>
 										</div>
 										<div class="col-md-6 col-sm-12">
 											<div class="styled-input">
-												<input id="volounteer_email" type="email" required />
+												<input id="volounteer_email" type="email" name="volunteerEmail" required />
 												<label>Email</label>
 											</div>
 										</div>
 										<div class="col-md-6 col-sm-12">
 											<div class="styled-input" style="float:right;">
-												<input id="volounteer_phone_number" type="text" required />
+												<input id="volounteer_phone_number" type="text" name="volunteerPhoneNumber" required />
 												<label>Phone Number</label>
 											</div>
 										</div>
 										<div class="col-lg-12">
 											<div class="styled-input wide">
-												<select id="volounteer_gender">
-													<option selected>Gender</option>
-													<option>Male</option>
-													<option>Female</option>
+												<select id="volounteer_gender" name="gender" required="">
+													<option disabled selected>Gender</option>
+													<option value="male">Male</option>
+													<option value="female">Female</option>
 												</select>
 											</div>
 										</div>
 										<div class="col-lg-12">
 											<div class="styled-input wide">
-												<select>
-													<option selected>Location</option>
-													<option>#</option>
-													<option>#</option>
+												<select id="volounteer_location" name="volunteerLocation" required>
+													<option disabled selected>Location</option>
+													<option value="Abia">Abia</option>
+													<option value="Adamawa">Adamawa</option>
+													<option value="Akwa Ibom">Akwa Ibom</option>
+													<option value="Anambra">Anambra</option>
+													<option value="Bauchi">Bauchi</option>
+													<option value="Bayelsa">Bayelsa</option>
+													<option value="Benue">Benue</option>
+													<option value="Borno">Borno</option>
+													<option value="Cross Rive">Cross River</option>
+													<option value="Delta">Delta</option>
+													<option value="Ebonyi">Ebonyi</option>
+													<option value="Edo">Edo</option>
+													<option value="Ekiti">Ekiti</option>
+													<option value="Enugu">Enugu</option>
+													<option value="FCT">Federal Capital Territory</option>
+													<option value="Gombe">Gombe</option>
+													<option value="Imo">Imo</option>
+													<option value="Jigawa">Jigawa</option>
+													<option value="Kaduna">Kaduna</option>
+													<option value="Kano">Kano</option>
+													<option value="Katsina">Katsina</option>
+													<option value="Kebbi">Kebbi</option>
+													<option value="Kogi">Kogi</option>
+													<option value="Kwara">Kwara</option>
+													<option value="Lagos">Lagos</option>
+													<option value="Nasarawa">Nasarawa</option>
+													<option value="Niger">Niger</option>
+													<option value="Ogun">Ogun</option>
+													<option value="Ondo">Ondo</option>
+													<option value="Osun">Osun</option>
+													<option value="Oyo">Oyo</option>
+													<option value="Plateau">Plateau</option>
+													<option value="Rivers">Rivers</option>
+													<option value="Sokoto">Sokoto</option>
+													<option value="Taraba">Taraba</option>
+													<option value="Yobe">Yobe</option>
+													<option value="Zamfara">Zamfara</option>
 												</select>
 											</div>
 										</div>
 										<div class="col-lg-12">
 											<div class="styled-input wide">
-												<textarea id="volounteer_address" required></textarea>
+												<textarea id="volounteer_address" name="volunteerAddress" required></textarea>
 												<label>Address</label>
 											</div>
 										</div>
 										<div class="col-lg-12">
 											<div class="styled-input wide">
-												<input id="volounteer_organization_name" type="text" required />
-												<label>Organization Name</label>
+												<input id="volounteer_organization_name" name="volunteerOrgName" type="text" />
+												<label>Organization Name (Optional)</label>
 											</div>
 										</div>
+										<div class="col-lg-12">
+											<div class="success">You have successfully registered. We will get back to you</div>
+											<div class="error">An error occured, please try again later</div>
+										</div>
 										<div class="col-lg-12 mt-4">
-											<button id="charity_volounteer_submit" type="submit" class="btn cr-btn fill pt-3 pb-3 m-0">Complete Registration</button>
+											<button id="charity_volounteer_submit" type="submit" class="btn cr-btn fill pt-3 pb-3 m-0 submit-btn">Complete Registration</button>
 										</div>
 									</div>
 								</form>
@@ -1342,7 +1551,7 @@
 					<div class="container">
 						<div class="col-lg-12 p-0">
 							<div class="auth-area__content p-0">
-								<form class="pt-4">
+								<form class="pt-4" accept-charset="UTF-8" action="https://getform.io/f/5c4a8933-de3b-4a4e-95d2-590824d3a42e" method="POST" enctype="multipart/form-data" target="_blank" id="logisticsForm">
 									<div class="auth-area__header">
 										<h3>Register as Logistic Company/Rider</h3>
 										<p>Join us as a Logistic company/Rider to deliver mask to homes</p>
@@ -1350,50 +1559,76 @@
 									<div class="row">
 										<div class="col-lg-12">
 											<div class="styled-input wide">
-												<input id="lgcompany_name" type="text" required />
+												<input id="lgcompany_name"  type="text" name="logisticsPersonName" required />
 												<label>Name</label>
+											</div>
+										</div>
+										<div class="col-lg-12">
+											<div class="styled-input wide">
+												<input id="lgcompany_organization_name" name="logisticsCompanyName" type="text" required />
+												<label>Company Name</label>
 											</div>
 										</div>
 										<div class="col-md-6 col-sm-12">
 											<div class="styled-input">
-												<input id="lgcompany_email" type="email" required />
+												<input id="lgcompany_email" type="email" name="logisticsEmail" required />
 												<label>Email</label>
 											</div>
 										</div>
 										<div class="col-md-6 col-sm-12">
 											<div class="styled-input" style="float:right;">
-												<input id="lgcompany_phone_number" type="text" required />
+												<input id="lgcompany_phone_number" type="text" name="logisticsPhoneNumber" required />
 												<label>Phone Number</label>
 											</div>
 										</div>
 										<div class="col-lg-12">
 											<div class="styled-input wide">
-												<select id="lgcompany_gender">
-													<option selected>Gender</option>
-													<option>Male</option>
-													<option>Female</option>
+												<select id="lglocation" name="logisticsLocation">
+													<option disabled selected>Location</option>
+													<option value="Abia">Abia</option>
+													<option value="Adamawa">Adamawa</option>
+													<option value="Akwa Ibom">Akwa Ibom</option>
+													<option value="Anambra">Anambra</option>
+													<option value="Bauchi">Bauchi</option>
+													<option value="Bayelsa">Bayelsa</option>
+													<option value="Benue">Benue</option>
+													<option value="Borno">Borno</option>
+													<option value="Cross Rive">Cross River</option>
+													<option value="Delta">Delta</option>
+													<option value="Ebonyi">Ebonyi</option>
+													<option value="Edo">Edo</option>
+													<option value="Ekiti">Ekiti</option>
+													<option value="Enugu">Enugu</option>
+													<option value="FCT">Federal Capital Territory</option>
+													<option value="Gombe">Gombe</option>
+													<option value="Imo">Imo</option>
+													<option value="Jigawa">Jigawa</option>
+													<option value="Kaduna">Kaduna</option>
+													<option value="Kano">Kano</option>
+													<option value="Katsina">Katsina</option>
+													<option value="Kebbi">Kebbi</option>
+													<option value="Kogi">Kogi</option>
+													<option value="Kwara">Kwara</option>
+													<option value="Lagos">Lagos</option>
+													<option value="Nasarawa">Nasarawa</option>
+													<option value="Niger">Niger</option>
+													<option value="Ogun">Ogun</option>
+													<option value="Ondo">Ondo</option>
+													<option value="Osun">Osun</option>
+													<option value="Oyo">Oyo</option>
+													<option value="Plateau">Plateau</option>
+													<option value="Rivers">Rivers</option>
+													<option value="Sokoto">Sokoto</option>
+													<option value="Taraba">Taraba</option>
+													<option value="Yobe">Yobe</option>
+													<option value="Zamfara">Zamfara</option>
 												</select>
 											</div>
 										</div>
 										<div class="col-lg-12">
 											<div class="styled-input wide">
-												<select>
-													<option selected>Location</option>
-													<option>#</option>
-													<option>#</option>
-												</select>
-											</div>
-										</div>
-										<div class="col-lg-12">
-											<div class="styled-input wide">
-												<textarea id="lgcompany_address" required></textarea>
+												<textarea id="lgcompany_address" name="logisticsAddress" required></textarea>
 												<label>Address</label>
-											</div>
-										</div>
-										<div class="col-lg-12">
-											<div class="styled-input wide">
-												<input id="lgcompany_organization_name" type="text" required />
-												<label>Organization Name</label>
 											</div>
 										</div>
 										<div class="col-lg-12 ">
@@ -1407,9 +1642,14 @@
 													<option>No</option>
 												</select>
 											</div>
+											</div>
+										</div>
+										<div class="col-lg-12">
+											<div class="success">You have successfully registered. We will get back to you</div>
+											<div class="error">An error occured, please try again later</div>
 										</div>
 										<div class="col-lg-12 mt-4">
-											<button id="logistic_company_submit" type="submit" class="btn cr-btn fill pt-3 pb-3 m-0">Complete Registration</button>
+											<button id="logistic_company_submit" type="submit" class="btn cr-btn fill pt-3 pb-3 m-0 submit-btn">Complete Registration</button>
 										</div>
 									</div>
 								</form>
@@ -1420,7 +1660,7 @@
 			</div>
 		</div>
 	</div>
-	<section class="page-section red--bg" id="join">
+	<section class="page-section red--bg" id="join" data-aos="fade-up">
 		<div class="container">
 			<div class="page-section__content text-center col-lg-10 mx-auto">
 				<h3 class="title text-white">Register to represent your Community in this project.</h3>
@@ -1435,7 +1675,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="page-section" id="contact">
+	<section class="page-section" id="contact" data-aos="fade-up">
 		<div class="container p-0">
 			<div class="page-section__content">
 				<div class="text-center">
@@ -1453,55 +1693,58 @@
 								<span class="col-lg-8 p-0">House 14 Apartment,<br>
 									14, Kudang Street,<br> off Monrovia Street,
 									Wuse 2,<br> Abuja-Nigeria.</span>
-								<span>Tel:+234 815 656 1293 </span>
+								<span>0700-CRAC-GROUP <br> (0700-2722-47687)</span>
+								<span>Tel: +234 908 528 9871 </span>
 								<span>info@cracgroup.org </span>
 							</div>
 						</div>
 						<div class="contact-info mt-3">
 							<div class="contact-info__title">
 								<h3><i class="ti-mobile"></i></h3>
-								<h4>For Enquiries</h4>
+								<h4>CRAC Trauma Call Center</h4>
 							</div>
 							<div class="contact-info__content">
-								<span>0700-CRAC-GROUP (0700-2722-47687)</span>
 								<span>Toll Free: 0800-555-111-333</span>
 								<span>COVID-19 Bot Assistant: 0700-2722-47687</span>
 							</div>
 						</div>
 					</div>
 					<div class="col-lg-6">
-						<form method="POST" id="contactForm">
-                        {% csrf_token %}
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="styled-input wide">
-                                        <input name="name" id="id_contact_name" value="" type="text" required>
-                                        <label>Name</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-sm-12">
-                                    <div class="styled-input">
-                                        <input name="email" id="id_contact_email" value="" type="email" required>
-                                        <label>Email</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-sm-12">
-                                    <div class="styled-input" style="float:right;">
-                                        <input name="phone_number" id="id_contact_phone_number" value="" type="text" required>
-                                        <label>Phone Number</label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="styled-input wide">
-                                        <textarea name="message" id="id_contact_message" placeholder="Your Message"></textarea>
-                                        <label>Message</label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <button id="contact_submit" type="submit" class="btn cr-btn fill pt-3 pb-3 m-0">Submit</button>
-                                </div>
-                            </div>
-                        </form>
+						<form accept-charset="UTF-8" action="https://getform.io/f/5c4a8933-de3b-4a4e-95d2-590824d3a42e" method="POST" enctype="multipart/form-data" target="_blank" id="contactForm">
+							<div class="row">
+								<div class="col-lg-12">
+									<div class="styled-input wide">
+										<input type="text" name="contactName" required />
+										<label>Name</label>
+									</div>
+								</div>
+								<div class="col-md-6 col-sm-12">
+									<div class="styled-input">
+										<input type="email" name="contactEmail" required />
+										<label>Email</label>
+									</div>
+								</div>
+								<div class="col-md-6 col-sm-12">
+									<div class="styled-input" style="float:right;">
+										<input type="text" name="contactPhoneNumber" required />
+										<label>Phone Number</label>
+									</div>
+								</div>
+								<div class="col-lg-12">
+									<div class="styled-input wide">
+										<textarea name="contactMessage" required></textarea>
+										<label>Message</label>
+									</div>
+								</div>
+								<div class="col-lg-12">
+									<div class="success">Your message has been received. We will get back to you</div>
+									<div class="error">An error occured, please try again later</div>
+								</div>
+								<div class="col-lg-12">
+									<button type="submit" class="btn cr-btn fill pt-3 pb-3 m-0 submit-btn">Submit</button>
+								</div>
+							</div>
+						</form>
 					</div>
 				</div>
 			</div>
@@ -1532,12 +1775,12 @@
 				</div>
 			</div>
 			<div class=" mt-2 mb-4 p-0">
-				<p class="copyright">&copy; 2020 Community Resilience Against COVID-19 (CRAC). All rights reserved.</p>
+				<p class="copyright ml-0">&copy; 2020 Community Resilience Against COVID-19 (CRAC). All rights reserved.</p>
 			</div>
 			<div class="footer-credits text-center">
 				<p>Project Site Developed with <i class="ti-heart"></i> by <a href="https://zebulloners.com" target="_blank">Zebullon</a> & <a href="https://krowdback.com/" target="_blank"> Krowdback </a></p>
 				<div class="mt-4">
-					<a href="https://zebulloners.com" target="_blank"> <img src="https://res.cloudinary.com/media-outlet/image/upload/v1585139007/crac/zebullon-logo_krtxhd.png" alt="Zebullon Logo"> </a>
+					<a href="https://zebulloners.com" target="_blank"> <img src="https://res.cloudinary.com/media-outlet/image/upload/v1585585425/crac/zebullon-logo_krtxhd_e5d92476c1a98adb716445289e277d7a_ws6zy3.png" alt="Zebullon Logo"> </a>
 					<a href="https://krowdback.com/" target="_blank"> <img src="https://res.cloudinary.com/media-outlet/image/upload/v1585192984/crac/krowdback-LOGO_oal6cc.png" alt="krowdback logo" class="single-logo"> </a>
 				</div>
 			</div>
@@ -1548,82 +1791,19 @@
 	<script src="{% static 'lib/bootstrap/bootstrap.min.js' %}"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/owl.carousel.min.js"></script>
 	<script src="{% static 'dist/main.js' %}"></script>
-	<script type="text/javascript" src="http://demo.api.gladepay.com/checkout.js"></script>
-	{% comment %} <script type="text/javascript" src="https://api.gladepay.com/checkout.js"></script> {% endcomment %}
-
+	
 	<script>
-    $('#donate_now').click(function() {
-        var Url = "{% url 'payment' %}"
-        initPayment({
-            MID:"GP0000001",
-            email: "hello@example.com",
-            firstname:"John",
-            lastname:"Doe",
-            description: "",
-            title: "Compleate Donation",
-            amount: 50,
-            phone: 08160561293,
-            description: "secured payment through gladepay",
-            payment_method: ['card', 'ussd'],
-            logo: 'https://res.cloudinary.com/raph941/image/upload/v1585561032/logog_ppngArtboard_1_r65zcg.png',
-            onclose: function() {},
-            callback: function(response) {
-                console.log(response)
-				$.ajax({
-				url: Url,
-				method: "POST",
-				data: {
-					"response": response,
-					'csrfmiddlewaretoken': '{{ csrf_token }}'
-				},
-				success: function(data){					
-					console.log(data)
-				}
-				})
-			}
-		})
-	})	
-	</script>
-
-	<script>
-	//script for ajax submission of contact us form
-		$(document).ready(function() {
-			$('#contact_submit').click(function(e){
-				e.preventDefault();
-				var contactName = $("#id_contact_name").val();
-				var contactEmail = $("#id_contact_email").val();
-				var contactPhoneNumber = $("#id_contact_phone_number").val();
-				var contactMessage = $("#id_contact_message").val();
-				var Url = "{% url 'contactformsubmit' %}"
-
-				$.ajax({
-				url: Url,
-				method: "POST",
-				data: {
-					"contactName":contactName,
-					"contactEmail":contactEmail,
-					"contactPhoneNumber": contactPhoneNumber,
-					"contactMessage": contactMessage,
-					'csrfmiddlewaretoken': '{{ csrf_token }}'
-				},
-				success: function(data){
-					console.log(data)
-				}
-				})
-			})
-		})
-
 
 	//script for ajax submission of Logistic Company Registration
 		$(document).ready(function() {
 			$('#logistic_company_submit').click(function(e){
-				e.preventDefault();
 				var volounteerName = $("#lgcompany_name").val();
 				var volounteerEmail = $("#lgcompany_email").val();
 				var volounteerPhoneNumber = $("#lgcompany_phone_number").val();
 				var volounteerGender = $("#lgcompany_gender").val();
 				var volounteerAddress = $("#lgcompany_address").val();
 				var volounteerOrganizationName = $("#lgcompany_organization_name").val();
+				var volounteerLocation = $("#lglocation").val();
 				var Url = "{% url 'volounteer_reg' %}"
 
 				$.ajax({
@@ -1635,13 +1815,12 @@
 					"volounteerEmail":volounteerEmail,
 					"volounteerPhoneNumber": volounteerPhoneNumber,
 					"volounteerGender": volounteerGender,
+					"volounteerLocation": volounteerLocation,
 					"volounteerAddress": volounteerAddress,
 					"volounteerOrganizationName": volounteerOrganizationName,
 					'csrfmiddlewaretoken': '{{ csrf_token }}'
 				},
-				success: function(data){
-					$("#logisticsRegistration").modal('hide')
-					
+				success: function(data){					
 					console.log(data)
 				}
 				})
@@ -1651,11 +1830,11 @@
 		//script for ajax submission of charity volounteer form
 		$(document).ready(function() {
 			$('#charity_volounteer_submit').click(function(e){
-				e.preventDefault();
 				var volounteerName = $("#volounteer_name").val();
 				var volounteerEmail = $("#volounteer_email").val();
 				var volounteerPhoneNumber = $("#volounteer_phone_number").val();
 				var volounteerGender = $("#volounteer_gender").val();
+				var volounteerLocation = $("#volounteer_location").val();
 				var volounteerAddress = $("#volounteer_address").val();
 				var volounteerOrganizationName = $("#volounteer_organization_name").val();
 				var Url = "{% url 'volounteer_reg' %}"
@@ -1669,20 +1848,20 @@
 					"volounteerEmail":volounteerEmail,
 					"volounteerPhoneNumber": volounteerPhoneNumber,
 					"volounteerGender": volounteerGender,
+					"volounteerLocation": volounteerLocation,
 					"volounteerAddress": volounteerAddress,
 					"volounteerOrganizationName": volounteerOrganizationName,
 					'csrfmiddlewaretoken': '{{ csrf_token }}'
 				},
 				success: function(data){
-					$("#volunteerRegistration").modal('hide')
 					console.log(data)
 				}
 				})
 			})
 		})
-
-
 	</script>
 </body>
 
 </html>
+
+	

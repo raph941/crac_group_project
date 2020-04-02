@@ -1,0 +1,546 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="CRAC (Community Resilience against COVID-19) is a not for profit initiative focused on building the resilience of effected communities with the sole aim of ending the pandemic through; Aggressive educational initiatives and altruistic projects
+Sustainable strategic interventions designed to activate selfless giving aimed at supporting the efforts of government to control the spread and, ultimately end the pandemic. ">
+	<link rel="icon" type="image/png" sizes="192x192" href="https://res.cloudinary.com/media-outlet/image/upload/v1585585511/crac/favicon_xmgsj2_940baa423a6b5fba85df7e9ad8999427_yqy1pd.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="https://res.cloudinary.com/media-outlet/image/upload/v1585585511/crac/favicon_xmgsj2_940baa423a6b5fba85df7e9ad8999427_yqy1pd.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="https://res.cloudinary.com/media-outlet/image/upload/v1585585511/crac/favicon_xmgsj2_940baa423a6b5fba85df7e9ad8999427_yqy1pd.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="https://res.cloudinary.com/media-outlet/image/upload/v1585585511/crac/favicon_xmgsj2_940baa423a6b5fba85df7e9ad8999427_yqy1pd.png">
+	<title>Community Resilience Against COVID-19</title>
+	<link rel="stylesheet" href="{% static 'lib/bootstrap/bootstrap.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/themify-icons/0.1.2/css/themify-icons.css">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="{% static 'lib/fontAwesome/css/all.css' %}">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css">
+	<link rel="stylesheet" href="{% static 'lib/OwlCarousel/owl.theme.default.min.css' %}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css">
+	<link rel="stylesheet" href="{% static 'dist/main.css' %}">
+</head>
+
+<body>
+	<header>
+		<nav class="mb-1 navbar navbar-expand-lg navbar-dark">
+			<div class="container">
+				<a class="navbar-brand" href="{% url 'home' %}">
+					<img src="https://res.cloudinary.com/media-outlet/image/upload/v1585585610/crac/logo_faulog_bcd3139a03aa80f9475b30d1cda086ca_qmbajk.png" alt="Logo" class="logo">
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#toggleNav" aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+				<div class="collapse navbar-collapse" id="toggleNav">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item ">
+							<a class="nav-link " href="{% url 'home' %}#home">
+								Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link " href="{% url 'home' %}#about">
+								About</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link " href="{% url 'home' %}#video">
+								Video</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active" href="{% url 'home' %}#donation">
+								Donation</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link " href="{% url 'home' %}#supporters">
+								Supporters</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link " href="{% url 'home' %}#join">
+								Join us</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link " href="{% url 'home' %}#contact">
+								Contact us</a>
+						</li>
+					</ul>
+				</div>
+				<div class="collapse navbar-collapse" id="toggleNav">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item">
+							<a class=" btn cr-btn red--outline" href="{% url 'one-time-donation' %}">
+								Donate</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<section class="page-section auth-area pt-5">
+		<div class="container pt-5">
+			<div class="col-lg-12 p-0 mx-auto">
+				<div class="auth-area__content p-0">
+					<div class="col-lg-12 p-0">
+						<div class="auth-area__header">
+							<h3>MATCHING DONATION</h3>
+							<p>Make a matching donation of N1M & Above</p>
+						</div>
+						<div class="row pt-5 mt-2 reverse-column ">
+							<div class="col-lg-6">
+								<div class=" donation-message">
+									<div>
+										<h4 class="title"> Appreciation & Reward: </h4>
+										<p class="desc">We truly understand that this donation and gesture is truly selfless but we still hold it to say thank you for saying “#ThisIsMyResponse” with your donation.
+											Every donor will get one or more of; </p>
+										<ul class="list">
+											<li>CRAC e-Certificate of Support </li>
+											<li>CRAC Certificate of Appreciation </li>
+											<li>CRAC Partner Plaque </li>
+											<li>CRAC Coordinators Plaque </li>
+											<li>CRAC Platform Supporters Plaque </li>
+											<li>CRAC Logo Display on Website </li>
+											<li>CRAC Name Mention on Website </li>
+										</ul>
+										<p class="desc">We will also like you to make a short 1 minute video or send a picture holding a card saying;
+											<strong>“I just donated, #ThisIsMyResponse” </strong>
+										</p>
+										<p class="desc">
+											Share on your social media handle with the hash tags;
+										</p>
+										<span class="hash-tag">#ThisIsMyResponse </span>
+										<span class="hash-tag">#CRACGroup </span>
+										<span class="hash-tag">#StaySafeStayHomeDontPanic </span>
+										<p class="desc">And tag us @CracGroup on Instagram, Twitter and Facebook </p>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-6">
+								<form action="#" id="productDonationForm" action="POST">
+									<div class="progress-wrap mb-1">
+										<div class="line-progress-bar">
+											<div class="line"></div>
+											<ul class="checkout-bar">
+												<li class="progressbar-dots active">1</li>
+												<li class="progressbar-dots">2</li>
+											</ul>
+										</div>
+									</div>
+									<div class="tab-content">
+										<div class="tab-pane" id="step1">
+											<div class="tab-title">
+												<h4>Personal Information</h4>
+											</div>
+											<ul>
+												<li>
+													<div class="row">
+														<div class="col-lg-12">
+															<div class="isFluid">
+																<label class="label dark">Donate Anonymously?</label>
+																<div class="toggleInput mt-4">
+																	<input type="checkbox" id="anonymityToggle" style="display:none;">
+																	<label for="anonymityToggle"></label>
+																</div>
+															</div>
+														</div>
+														<div class="col-lg-6">
+															<div class="errorTxt"></div>
+															<div class="styled-input wide hidden-input">
+																<input id="donator_first_name" type="text" name="donation-name" required />
+																<label>First Name</label>
+															</div>
+														</div>
+														<div class="col-lg-6">
+															<div class="errorTxt"></div>
+															<div class="styled-input wide hidden-input">
+																<input id="donator_last_name" type="text" name="donation-name" required />
+																<label>Last Name</label>
+															</div>
+														</div>
+													</div>
+												</li>
+												<li>
+													<div class="col-lg-12 p-0">
+														<div class="errorTxt"></div>
+														<div class="styled-input wide">
+															<select id="donator_gender" name="gender" required="">
+																<option disabled selected>Gender</option>
+																<option value="male">Male</option>
+																<option value="female">Female</option>
+															</select>
+														</div>
+													</div>
+												</li>
+												<li>
+													<div>
+														<div class="errorTxt"></div>
+														<div class="styled-input wide">
+															<input id="donator_email" type="email" name="donation-email" required />
+															<label>Email</label>
+														</div>
+													</div>
+												</li>
+												<li>
+													<div>
+														<div class="errorTxt"></div>
+														<div class="styled-input wide">
+															<input id="donator_phone_number" type="text" name="donation-phone-number" required />
+															<label>Phone Number</label>
+														</div>
+													</div>
+												</li>
+												<li style="list-style: none; display: inline">
+													<button class="cr-btn is-lg fill next-btn1 w-100 m-0 mt-4" type="button">Next</button>
+												</li>
+											</ul>
+										</div>
+										<div class="tab-pane" id="step2">
+											<div class="tab-title">
+												<h4>Donation information </h4>
+											</div>
+											<ul>
+												<li>
+													<label class="label">How much would you like to donate?</label>
+													<div class="styled-input wide">
+														<input type="number" name="donation-amount" min="1000000" value="1000000" required id="donation-amount" />
+													</div>
+												</li>
+												<li>
+													<button class="cr-btn is-lg fill next-btn2 w-100 m-0 mt-4" type="button">Proceed to Payment</button>
+												</li>
+											</ul>
+										</div>
+										<div class="tab-pane" id="step3">
+											<div class="tab-title">
+												<h4>Payment Information</h4>
+											</div>
+											<ul>
+												<li>
+													<div class="text-center mt-4">
+														<span class="amountToDonate donation-amount"></span>
+													</div>
+												</li>
+												<li>
+													<div>
+														<div class="errorTxt"></div>
+														<div class="styled-input wide">
+															<input type="text" name="card-holder-name" placeholder="Card Holder Name" required />
+														</div>
+													</div>
+												</li>
+												<li>
+													<div>
+														<div class="errorTxt"></div>
+														<div class="styled-input wide">
+															<input type="number" name="card-number" placeholder="Card Number" required id="cardnumber" />
+														</div>
+												</li>
+												<li>
+													<div class="p-0">
+														<label class="label">Expire (Valid until)</label>
+														<div class="row">
+															<div class="col-lg-6">
+																<div class="styled-input">
+																	<input type="tel" id="expiresMonth" placeholder="MM" allowed-pattern="[0-9]" maxlength="2" required>
+																</div>
+															</div>
+															<div class="col-lg-6">
+																<div class="styled-input">
+																	<input type="tel" id="expiresYear" placeholder="YY" allowed-pattern="[0-9]" maxlength="2" required>
+																</div>
+															</div>
+														</div>
+													</div>
+												</li>
+												<li>
+													<div class="col-lg-12 p-0">
+														<div class="errorTxt"></div>
+														<div class="styled-input wide">
+															<input type="number" minlength="3" maxlength="4" name="card-cvv" required placeholder="CVV" />
+														</div>
+													</div>
+												</li>
+												<li>
+													<button class="submit-btn cr-btn is-lg fill d-block w-100 m-0 mt-5" type="submit">Complete Donation</button>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div id="loader" style="display: none;" class="col-lg-12 text-center">
+										<div class="cool-spinner"></div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</section>
+	<footer class="footer">
+		<div class="container">
+			<div class="footer-bottom pl-0">
+				<div class="col-lg-6">
+					<div class="newsletter">
+						<h3 class="heading">Subscribe to our newsletter</h3>
+						<form class="col-lg-12 p-0">
+							<div class="input-group col-lg-12 p-0 mb-3">
+								<input type="email" class="form-control" placeholder="Email" aria-label="email" aria-describedby="basic-addo">
+								<div class="input-group-append">
+									<button type="submit" class="btn red--bg text-white">Subscribe</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="social">
+					<a href="https://www.instagram.com/cracgroup/" target="_blank"><i class="ti-instagram"></i></a>
+					<a href="https://twitter.com/cracgroup" target="_blank"><i class="ti-twitter"></i></a>
+					<a href="https://www.facebook.com/cracgroup" target="_blank"><i class="ti-facebook"></i></a>
+					<a href="#" target="_blank"><i class="ti-youtube"></i></a>
+				</div>
+			</div>
+			<div class=" mt-2 mb-4 p-0">
+				<p class="copyright ml-0">&copy; 2020 Community Resilience Against COVID-19 (CRAC). All rights reserved.</p>
+			</div>
+			<div class="footer-credits text-center">
+				<p>Project Site Developed with <i class="ti-heart"></i> by <a href="https://zebulloners.com" target="_blank">Zebullon</a> & <a href="https://krowdback.com/" target="_blank"> Krowdback </a></p>
+				<div class="mt-4">
+					<a href="https://zebulloners.com" target="_blank"> <img src="https://res.cloudinary.com/media-outlet/image/upload/v1585585425/crac/zebullon-logo_krtxhd_e5d92476c1a98adb716445289e277d7a_ws6zy3.png" alt="Zebullon Logo"> </a>
+					<a href="https://krowdback.com/" target="_blank"> <img src="https://res.cloudinary.com/media-outlet/image/upload/v1585192984/crac/krowdback-LOGO_oal6cc.png" alt="krowdback logo" class="single-logo"> </a>
+				</div>
+			</div>
+		</div>
+	<footer class="footer">
+		<div class="container">
+			<div class="footer-bottom pl-0">
+				<div class="col-lg-6">
+					<div class="newsletter">
+						<h3 class="heading">Subscribe to our newsletter</h3>
+						<form class="col-lg-12 p-0">
+							<div class="input-group col-lg-12 p-0 mb-3">
+								<input type="email" class="form-control" placeholder="Email" aria-label="email" aria-describedby="basic-addo">
+								<div class="input-group-append">
+									<button type="submit" class="btn red--bg text-white">Subscribe</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="social">
+					<a href="https://www.instagram.com/cracgroup/" target="_blank"><i class="ti-instagram"></i></a>
+					<a href="https://twitter.com/cracgroup" target="_blank"><i class="ti-twitter"></i></a>
+					<a href="https://www.facebook.com/cracgroup" target="_blank"><i class="ti-facebook"></i></a>
+					<a href="#" target="_blank"><i class="ti-youtube"></i></a>
+				</div>
+			</div>
+			<div class=" mt-2 mb-4 p-0">
+				<p class="copyright ml-0">&copy; 2020 Community Resilience Against COVID-19 (CRAC). All rights reserved.</p>
+			</div>
+			<div class="footer-credits text-center">
+				<p>Project Site Developed with <i class="ti-heart"></i> by <a href="https://zebulloners.com" target="_blank">Zebullon</a> & <a href="https://krowdback.com/" target="_blank"> Krowdback </a></p>
+				<div class="mt-4">
+					<a href="https://zebulloners.com" target="_blank"> <img src="https://res.cloudinary.com/media-outlet/image/upload/v1585585425/crac/zebullon-logo_krtxhd_e5d92476c1a98adb716445289e277d7a_ws6zy3.png" alt="Zebullon Logo"> </a>
+					<a href="https://krowdback.com/" target="_blank"> <img src="https://res.cloudinary.com/media-outlet/image/upload/v1585192984/crac/krowdback-LOGO_oal6cc.png" alt="krowdback logo" class="single-logo"> </a>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<a id="toTop"><i class="ti-angle-up"></i></a>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+	<script src="{% static 'lib/bootstrap/bootstrap.min.js' %}"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/owl.carousel.min.js"></script>
+	<script src="{% static 'dist/main.js' %}"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
+	<script type="text/javascript" src="https://api.gladepay.com/checkout.js"></script>
+	<script type="text/javascript">
+	var v = $("#productDonationForm").validate({
+		errorElement: "span",
+		errorClass: "error-input",
+		errorPlacement: function(error, element) {
+			error.insertAfter(element);
+		}
+	});
+
+	$(".next-btn1").click(function() {
+		if (v.form()) {
+			$(".tab-pane").hide();
+			$("#step2").fadeIn(1000);
+			$('.progressbar-dots').removeClass('active');
+			$('.progressbar-dots:nth-child(2)').addClass('active');
+		}
+	});
+	$(".next-btn2").click(function() {
+		var amount = $('#donation-amount').val()
+		var firstName = $('#donator_first_name').val()
+		var lastName = $('#donator_last_name').val()
+		var phone = $('#donator_phone_number').val()
+		var email = $('#donator_email').val()
+		var Url = "{% url 'payment' %}"
+
+		if (amount.toString().length >= 6) {
+			initPayment({
+				MID: "GP_05fIqP512Q3uqWiKTzJzQpj0sKHop3TK",
+				email: email,
+				firstname: firstName,
+				lastname: lastName,
+				description: "",
+				title: "Compleate Donation",
+				amount: amount,
+				phone: phone,
+				description: "secured payment through gladepay",
+				payment_method: ['card', 'ussd'],
+				onclose: function() {},
+				callback: function(response) {
+					$("#productDonationForm").html(`<div class="text-center"><h2 class='success-message'>Your donation was successfull! Thank you for playing your part! </h2> <div class="text-center"><a class="is-link" href="{% url 'home' %}"> Return to Homepage </a></div></div>`);
+					$.ajax({
+					url: Url,
+					method: "POST",
+					data: {
+						"response": response,
+						'csrfmiddlewaretoken': '{{ csrf_token }}'
+					},
+					success: function(data){					
+						console.log(data)
+					}
+					})
+				}
+			})
+		}
+	});
+	$('#donation-amount').on('keydown, keyup', function() {
+		var texInputValue = $(this).val();
+		$('.amountToDonate').html(`You are about to pay: N${texInputValue}`);
+	});
+	$(".submit-btn").click(function() {
+		var texInputValue = $('#donation-amount').val();
+		if (v.form()) {
+			$("#loader").show();
+			setTimeout(function() {
+				$("#productDonationForm").html(`<h2 class='success-message'>You have successfully made a donation of N${texInputValue}. Thanks for playing your part.`);
+			}, 4000);
+			return false;
+		}
+	});
+
+	$('#anonymityToggle').on('change', function() {
+		if ($('#anonymityToggle').is(":checked")) {
+			$(".hidden-input").hide(300);
+			setTimeout(function() {
+				$("#donator_first_name").val("Anonymous");
+				$("#donator_last_name").val("Anonymous");
+			}, 800);
+
+		} else {
+			$(".hidden-input").show(300);
+
+			$("#donator_first_name").val("");
+			$("#donator_last_name").val("");
+
+		}
+	});
+	</script>
+	<script type="text/javascript">
+	// Validate Card Expiry
+	const cMonth = document.querySelector('#expiresMonth'),
+		cYear = document.querySelector('#expiresYear');
+
+	function addEvent(elem, event, func) {
+		elem.addEventListener(event, func);
+	}
+	addEvent(cMonth, 'keyup', function(ev) {
+		ev = ev || window.event;
+		var month = this.value.replace(/[^0-9]/g, '');
+		if (ev.keyCode == 38) {
+			if (!month) { month = 0; }
+			month = parseInt(month);
+			month++;
+			if (month < 10) {
+				month = '0' + month;
+			}
+		}
+		if (ev.keyCode == 40) {
+			if (!month) { month = 13; }
+			month = parseInt(month);
+			month--;
+			if (month == 0) { month = 1; }
+			if (month < 10) {
+				month = '0' + month;
+			}
+
+		}
+		if (parseInt(month) > 12) {
+			month = 12;
+		}
+		if (parseInt(month) < 1 && month != 0) {
+			month = '01';
+		}
+		if (month == '00') {
+			month = '01';
+		}
+
+		if (month != this.value) {
+			this.value = month;
+		}
+		if (month.toString().length == 2) {
+			syncText(cMonth, month);
+		}
+	});
+
+	function syncText(elCol, text) {
+		var collection;
+		for (var j = 0; j < elCol.length; j++) {
+			collection = elCol[j].querySelectorAll('span');
+			if (!collection.length) {
+				elCol[j].innerHTML = text;
+			} else {
+				for (var i = 0; i < collection.length; i++) {
+					collection[i].innerHTML = text;
+				}
+			}
+		}
+	}
+	addEvent(cYear, 'keyup', function(ev) {
+		ev = ev || window.event;
+		var currentYear = new Date().getFullYear().toString().substr(2, 2),
+			year = this.value.replace(/[^0-9]/g, '');
+
+		if (ev.keyCode == 38) {
+			if (!year) { year = currentYear; }
+			year = parseInt(year);
+			year++;
+			if (year < 10) {
+				year = '0' + year;
+			}
+		}
+		if (ev.keyCode == 40) {
+			if (!year) { year = parseInt(currentYear) + 5; }
+			year = parseInt(year);
+			year--;
+			if (year < 10) {
+				year = '0' + year;
+			}
+		}
+
+		if (year.toString().length == 2 && parseInt(year) < currentYear) {
+			year = currentYear;
+		}
+		if (year != this.value) {
+			this.value = year;
+		}
+		if (year > (parseInt(currentYear) + 5)) {
+			year = (parseInt(currentYear) + 5);
+			this.value = year;
+		}
+		if (year.toString().length == 2) {
+			syncText(cYear, year);
+		}
+	});
+	</script>
+	</body>
+
+</html>
