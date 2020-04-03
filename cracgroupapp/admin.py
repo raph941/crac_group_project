@@ -5,4 +5,5 @@ from cracgroupapp import models
 admin.site.register(models.PaymentModel)
 admin.site.register(models.ProductDonationModel)
 admin.site.register(models.VolounteerModel)
-
+admin.site.register(models.JointDonationModel)
+admin.site.register(models.JointDonatorModel)

@@ -5,7 +5,8 @@ from django.contrib import messages
 from django.template.loader import get_template
 from django.core.mail import EmailMessage
 from django.http import JsonResponse
-from .models import VolounteerModel, PaymentModel, ProductDonationModel
+from .models import VolounteerModel, PaymentModel, ProductDonationModel, JointDonationModel, JointDonatorModel
+from .utils import AddToDonation
 
 from .forms import ContactForm
 
@@ -191,3 +192,19 @@ def MatchingDonation20MView(request):
 
 
     return render(request, 'matching-donation-20m.html')
+
+
+def JointDonationView(request):
+    if request.method == 'POST':
+        fullname            = request.POST['response[fullname]']
+        amount              = request.POST['response[amount]']
+        product             = request.POST['product']
+
+        product_obj         = AddToDonation(fullname, amount, product)
+
+        context = {
+            'product': product_obj,
+        }
+
+
+    return render(request, 'rice-joint-donation.html', context)

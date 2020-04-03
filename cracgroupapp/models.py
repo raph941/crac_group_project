@@ -45,6 +45,27 @@ class ProductDonationModel(models.Model):
     delivery_date           = models.CharField(max_length=100, null=True, blank=True)
 
 
+class JointDonatorModel(models.Model):
+    '''
+    holds information about the users that has participated in a joint donation
+    '''
+    fullname               = models.CharField(max_length=150)
+    amount                 = models.IntegerField()
+
+    def __str__(self):
+        return f'{ self.fullname }: { self.amount }'
 
 
+class JointDonationModel(models.Model):
+    '''
+    hold information on joint donations for specific products
+    '''
+    product                 = models.CharField(max_length=150, unique=True)
+    unit_price              = models.IntegerField()
+    donated_amount          = models.IntegerField(default=0)
+    donation_circle         = models.IntegerField(default=0) #this represents the amount of times the donation has been compleated 
+    donation_count          = models.IntegerField(default=0)
+    donators                = models.ManyToManyField(JointDonatorModel)
 
+    def __str__(self):
+        return f'{ self.product }'
