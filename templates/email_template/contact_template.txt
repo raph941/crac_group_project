@@ -1,5 +1,0 @@
-Name:{{ contact_name }}
-Email:{{ contact_email }}
-Phone Number: {{ contact_phone_number }}
-
-{{ contact_message|safe }}

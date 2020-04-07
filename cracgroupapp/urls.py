@@ -12,5 +12,6 @@ urlpatterns = [
     url(r"^matching-donations-1m/$", views.MatchingDonation1MView, name="matching-donation-1m"),
     url(r"^matching-donations-5m/$", views.MatchingDonation5MView, name="matching-donation-5m"),
     url(r"^matching-donations-20m/$", views.MatchingDonation20MView, name="matching-donation-20m"),
+    url(r"^joint-donation/(?P<pk>\d+)$", views.JointDonationView, name="joint-donation"),
     
 ]

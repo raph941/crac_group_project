@@ -5,63 +5,34 @@ from django.contrib import messages
 from django.template.loader import get_template
 from django.core.mail import EmailMessage
 from django.http import JsonResponse
-from .models import VolounteerModel, PaymentModel, ProductDonationModel, JointDonationModel, JointDonatorModel
-from .utils import AddToDonation
+from .models import VolounteerModel, PaymentModel, ProductDonationModel, JointDonationModel
 
 from .forms import ContactForm
 
 def home(request):
-    return render(request, 'index.html')
+    products                        = JointDonationModel.objects.all()
 
+    context = {
+        'products': products,
+    }
 
-def ContactFormSubmitView(request):
-    if request.method == 'POST':
-        
-        contact_name            = request.POST['contactName']
-        contact_email           = request.POST['contactEmail']
-        contact_message         = request.POST['contactName']
-        contact_phone_number    = request.POST['contactMessage']
-
-        template                = get_template('email_template/contact_template.txt')
-        params                  = {
-                                    'contact_name': contact_name,
-                                    'contact_email': contact_email,
-                                    'contact_message': contact_message,
-                                    'contact_phone_number': contact_phone_number,
-                                    }
-        content                 = template.render(params)
-
-        email                   = EmailMessage(
-                                    subject     = "New contact Email on CRAC GROUP",
-                                    from_email  = contact_email,
-                                    to          = ['demo@email.com'],
-                                    body=content,
-                                )
-        email.send()
-
-        data = {
-            "message": 'your message has been sent we would contact you soon',
-        }
-        
-        return JsonResponse(data)
+    return render(request, 'index_temp.html', context)
 
 
 def VolounteerView(request):
     if request.method == 'POST':
-        volounteer                      = request.POST['volounteer']
-        volounteer_name                 = request.POST['volounteerName']
-        volounteer_email                = request.POST['volounteerEmail']
-        volounteer_phone_number         = request.POST['volounteerPhoneNumber']
-        volounteer_gender               = request.POST['volounteerGender']
-        volounteer_address              = request.POST['volounteerAddress']
-        volounteer_location             = request.POST['volounteerLocation']
-        volounteer_organization_name    = request.POST['volounteerOrganizationName']
-        # vehicle_ownership               = request.POST['vehicleOwnership']
+        volunteer_name                 = request.POST['volunteerName']
+        volunteer_organization_name    = request.POST['volunteerOrganizationName']
+        volunteer_email                = request.POST['volunteerEmail']
+        volunteer_phone_number         = request.POST['volunteerPhoneNumber']
+        volunteer_gender               = request.POST['volunteerGender']
+        volunteer_address              = request.POST['volunteerAddress']
+        volunteer_location             = request.POST['volunteerLocation']
+        volunteer_address              = request.POST['volunteerAs']
+        partner_as                     = request.POST['patrnerAs']
         
-        if volounteer == 'logistic':
-            VolounteerModel.objects.create(name=volounteer_name, email=volounteer_email, phone_number=volounteer_phone_number, gender=volounteer_gender, location=volounteer_location, address=volounteer_address, organization_name=volounteer_organization_name, is_logistic_company=True)
-        else:
-            VolounteerModel.objects.create(name=volounteer_name, email=volounteer_email, phone_number=volounteer_phone_number, gender=volounteer_gender, location=volounteer_location, address=volounteer_address, organization_name=volounteer_organization_name, is_charity_org=True)
+        
+        VolounteerModel.objects.create(name=volunteer_name, email=volunteer_email, phone_number=volunteer_phone_number, gender=volunteer_gender, location=volunteer_location, address=volunteer_address, organization_name=volunteer_organization_name, volunteeras=volunteer_as, partner_as=partner_as)
 
         data = {
             "message": 'thank you for volounteering, you would recieve a message from us',
@@ -194,17 +165,64 @@ def MatchingDonation20MView(request):
     return render(request, 'matching-donation-20m.html')
 
 
-def JointDonationView(request):
+def JointDonationView(request, pk):
+    product = JointDonationModel.objects.get(pk=pk)
     if request.method == 'POST':
         fullname            = request.POST['response[fullname]']
-        amount              = request.POST['response[amount]']
-        product             = request.POST['product']
+        email               = request.POST['response[email]']
+        txnstatus           = request.POST['response[txnStatus]']
+        txnref              = request.POST['response[txnRef]']
+        bankmessage         = request.POST['response[bank_message]']
+        paymentmethod       = request.POST['response[payment_method]']
+        amount              = request.POST['response[chargedAmount]']
+        message             = request.POST['response[message]']
+        fraudstatus         = request.POST['response[fraudStatus]']
+        PaymentModel.objects.create(fullname=fullname, email=email, txnstatus=txnstatus, txnref=txnref, bankmessage=bankmessage, paymentmethod=paymentmethod, amount=amount, message=message, fraudstatus=fraudstatus)
 
-        product_obj         = AddToDonation(fullname, amount, product)
+        product_pk          =  request.POST['product_id']
+        product_obj         = JointDonationModel.objects.get(pk=product_pk)
 
-        context = {
-            'product': product_obj,
+        if txnstatus == 'successful':
+            amount = int(float(amount))
+            product_obj.donated_amount += amount
+            product_obj.donation_count += 1
+
+        product_obj.save()
+
+    context = {
+        'product': product
+    }
+    
+    return render(request, 'joint-donation.html', context)
+
+
+def ContactFormSubmitView(request):
+    if request.method == 'POST':
+        
+        contact_name            = request.POST['contactName']
+        contact_email           = request.POST['contactEmail']
+        contact_message         = request.POST['contactName']
+        contact_phone_number    = request.POST['contactMessage']
+
+        template                = get_template('email_template/contact_template.txt')
+        params                  = {
+                                    'contact_name': contact_name,
+                                    'contact_email': contact_email,
+                                    'contact_message': contact_message,
+                                    'contact_phone_number': contact_phone_number,
+                                    }
+        content                 = template.render(params)
+
+        email                   = EmailMessage(
+                                    subject     = "New contact Email on CRAC GROUP",
+                                    from_email  = contact_email,
+                                    to          = ['demo@email.com'],
+                                    body=content,
+                                )
+        email.send()
+
+        data = {
+            "message": 'your message has been sent we would contact you soon',
         }
-
-
-    return render(request, 'rice-joint-donation.html', context)
+        
+        return JsonResponse(data)

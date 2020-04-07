@@ -84,10 +84,10 @@ WSGI_APPLICATION = 'cracgroup.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
-        'HOST': 'localhost',
+        'NAME': 'd660j1duvdrd5',
+        'USER': 'esqnpbqmpbonor',
+        'PASSWORD': 'ffd7ce4e3206a6b8eefd29196776e22bf3db4d0cc94478164665b9592e3c0a5d',
+        'HOST': 'ec2-23-20-129-146.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
